@@ -1,4 +1,4 @@
-package hash.apps.workplacer;
+package olii.apps.workplacer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
