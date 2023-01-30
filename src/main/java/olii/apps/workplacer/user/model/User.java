@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Builder
@@ -30,9 +29,9 @@ public class User implements UserDetails {
     private String email;
     private String password;
     @ElementCollection
-    private Set<String> companies;
+    private List<String> companies;
     @ElementCollection
-    private Set<String> offices;
+    private List<String> offices;
     @Enumerated(EnumType.STRING)
     private UserType userType;
 

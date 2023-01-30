@@ -10,8 +10,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -26,8 +25,8 @@ public class AuthenticationService {
                 .firstName(request.getFirstname())
                 .lastName(request.getLastname())
                 .email(request.getEmail())
-                .companies(new HashSet<>()) // TODO add companies
-                .offices(new HashSet<>()) // TODO add offices
+                .companies(new LinkedList<>()) // TODO add companies
+                .offices(new LinkedList<>()) // TODO add offices
                 .password(passwordEncoder.encode(request.getPassword()))
                 .userType(UserType.OFFICE_MANAGER)
                 .build();
@@ -57,6 +56,6 @@ public class AuthenticationService {
                     .token(jwtToken)
                     .build();
         }
-        return AuthenticationResponse.builder().token("null").build();
+        return AuthenticationResponse.builder().build();
     }
 }

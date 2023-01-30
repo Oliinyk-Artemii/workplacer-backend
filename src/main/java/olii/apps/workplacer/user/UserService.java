@@ -1,14 +1,15 @@
 package olii.apps.workplacer.user;
 
 import lombok.RequiredArgsConstructor;
-import olii.apps.workplacer.config.JwtService;
 import olii.apps.workplacer.user.model.User;
 import olii.apps.workplacer.user.model.request.CreateUserRequest;
 import olii.apps.workplacer.user.model.response.CreateUserResponse;
-import org.springframework.security.authentication.AuthenticationManager;
+import olii.apps.workplacer.user.model.response.OfficeUsersResponse;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -36,24 +37,17 @@ public class UserService {
     }
 
 
-//    public OfficeUsersResponse getAllUsers() {
-//        final String password = RandomStringUtils.random(8, CHARACTERS);
-//        final Optional<User> userOptional = userRepository.findByEmail(request.getEmail());
-//        if (userOptional.isPresent()) {
-//            authenticationManager.authenticate(
-//                    new UsernamePasswordAuthenticationToken(
-//                            request.getEmail(),
-//                            request.getPassword()
-//                    )
-//            );
-//            var user = userRepository.findByEmail(request.getEmail())
-//                    .orElseThrow();
-//            var jwtToken = jwtService.generateToken(user);
-//            return AuthenticationResponse
-//                    .builder()
-//                    .token(jwtToken)
-//                    .build();
-//        }
-//        return AuthenticationResponse.builder().token("null").build();
-//    }
+    public OfficeUsersResponse getOfficeUsers(String officeId) {
+        final String password = RandomStringUtils.random(8, CHARACTERS);
+        final Optional<List<User>> users = userRepository.findAllByOfficesContains(officeId);
+
+        if (users.isPresent()) {
+            return OfficeUsersResponse
+                    .builder()
+                    .users(users.get())
+                    .initialPassword(password)
+                    .build();
+        }
+        return OfficeUsersResponse.builder().build();
+    }
 }

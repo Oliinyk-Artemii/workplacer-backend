@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import olii.apps.workplacer.user.model.User;
 
-import java.util.Set;
+import java.util.List;
 
 @Data
 @Builder
@@ -16,5 +16,5 @@ import java.util.Set;
 public class OfficeUsersResponse {
     private String initialPassword;
     @ElementCollection
-    private Set<User> users;
+    private List<User> users;
 }

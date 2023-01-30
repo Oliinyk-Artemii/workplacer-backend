@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import olii.apps.workplacer.user.model.UserType;
 
-import java.util.Set;
+import java.util.List;
 
 @Data
 @Builder
@@ -20,7 +20,7 @@ public class CreateUserRequest {
     private String password;
     private UserType userType;
     @ElementCollection
-    private Set<String> companies;
+    private List<String> companies;
     @ElementCollection
-    private Set<String> offices;
+    private List<String> offices;
 }

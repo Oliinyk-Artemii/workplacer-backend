@@ -3,6 +3,7 @@ package olii.apps.workplacer.user;
 import lombok.RequiredArgsConstructor;
 import olii.apps.workplacer.user.model.request.CreateUserRequest;
 import olii.apps.workplacer.user.model.response.CreateUserResponse;
+import olii.apps.workplacer.user.model.response.OfficeUsersResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,8 +21,8 @@ public class UserController {
         return ResponseEntity.ok(userService.createUser(request));
     }
 
-//    @GetMapping("/user")
-//    public ResponseEntity<OfficeUsersResponse> getAllUsers() {
-//        return ResponseEntity.ok(userService.(request));
-//    }
+    @GetMapping("/user")
+    public ResponseEntity<OfficeUsersResponse> getAllUsers(@RequestParam String officeId) {
+        return ResponseEntity.ok(userService.getOfficeUsers(officeId));
+    }
 }
