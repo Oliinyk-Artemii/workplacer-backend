@@ -1,10 +1,11 @@
-package olii.apps.workplacer.user;
+package olii.apps.workplacer.user.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,8 +22,9 @@ import java.util.Set;
 @Table(name = "app_user")
 public class User implements UserDetails {
     @Id
-    @GeneratedValue
-    private Integer id;
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String id;
     private String firstName;
     private String lastName;
     private String email;

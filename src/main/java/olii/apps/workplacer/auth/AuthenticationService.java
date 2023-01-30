@@ -2,9 +2,9 @@ package olii.apps.workplacer.auth;
 
 import lombok.RequiredArgsConstructor;
 import olii.apps.workplacer.config.JwtService;
-import olii.apps.workplacer.user.User;
+import olii.apps.workplacer.user.model.User;
 import olii.apps.workplacer.user.UserRepository;
-import olii.apps.workplacer.user.UserType;
+import olii.apps.workplacer.user.model.UserType;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;

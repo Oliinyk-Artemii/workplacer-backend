@@ -5,34 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f25d1d50-56c2-429e-9fc0-932ed906c8f7" name="Changes" comment="[AUTH] Implement authorization base">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/85ef4d18-150a-4a92-af08-841d2f0dbbe1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/85ef4d18-150a-4a92-af08-841d2f0dbbe1/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/85ef4d18-150a-4a92-af08-841d2f0dbbe1/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/85ef4d18-150a-4a92-af08-841d2f0dbbe1/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/85ef4d18-150a-4a92-af08-841d2f0dbbe1/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/85ef4d18-150a-4a92-af08-841d2f0dbbe1/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/TempController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/auth/AuthenticationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/auth/AuthenticationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/auth/AuthenticationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/auth/RegisterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/config/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/config/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/config/JwtService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/config/SecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/demo/DemoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/UserType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/model/request/CreateUserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/model/response/CreateUserResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/model/response/OfficeUsersResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/85ef4d18-150a-4a92-af08-841d2f0dbbe1/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/85ef4d18-150a-4a92-af08-841d2f0dbbe1/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hash/apps/workplacer/WorkplacerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/WorkplacerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hash/apps/workplacer/WorkplacerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/olii/apps/workplacer/WorkplacerApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/auth/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/auth/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/UserType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/model/UserType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -138,7 +124,9 @@
       <workItem from="1674384579874" duration="5495000" />
       <workItem from="1674500224255" duration="3319000" />
       <workItem from="1674556217247" duration="23931000" />
-      <workItem from="1674907942038" duration="5536000" />
+      <workItem from="1674907942038" duration="14005000" />
+      <workItem from="1675077633008" duration="23000" />
+      <workItem from="1675100210956" duration="4146000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1674502336358</created>
@@ -147,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674502336358</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="[AUTH] Implement authorization base">
+      <created>1675021371392</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675021371392</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,11 +167,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/demo/DemoController.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/auth/AuthenticationService.java</url>
           <line>45</line>
@@ -234,46 +224,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/auth/AuthenticationService.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/auth/AuthenticationService.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/auth/AuthenticationService.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/auth/AuthenticationService.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/auth/AuthenticationService.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/auth/AuthenticationService.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/auth/AuthenticationService.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/auth/AuthenticationService.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/auth/AuthenticationService.java</url>
           <line>44</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
@@ -293,44 +243,88 @@
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/config/JwtAuthenticationFilter.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="39" />
+          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/UserController.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/config/JwtAuthenticationFilter.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="40" />
+          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/UserService.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/config/JwtAuthenticationFilter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/UserService.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/UserService.java</url>
           <line>36</line>
-          <option name="timeStamp" value="41" />
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/config/JwtAuthenticationFilter.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="42" />
+          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/UserService.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/config/JwtAuthenticationFilter.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="43" />
+          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/smtp/SMTPService.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/config/JwtAuthenticationFilter.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="44" />
+          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/smtp/SMTPService.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/config/JwtAuthenticationFilter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/smtp/SMTPService.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/smtp/SMTPService.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/smtp/SMTPService.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/smtp/SMTPService.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/user/UserService.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/smtp/SMTPService.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/smtp/SMTPService.java</url>
           <line>31</line>
-          <option name="timeStamp" value="45" />
+          <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/config/JwtAuthenticationFilter.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="46" />
+          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/smtp/SMTPService.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/olii/apps/workplacer/smtp/SMTPService.java</url>
+          <line>37</line>
+          <properties class="olii.apps.workplacer.smtp.SMTPService" method="sendMail">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
