@@ -39,7 +39,7 @@ public class AuthenticationService {
     }
 
 
-    public AuthenticationResponse authenticate(RegisterRequest request) {
+    public AuthenticationResponse login(RegisterRequest request) {
         final Optional<User> userOptional = userRepository.findByEmail(request.getEmail());
         if (userOptional.isPresent()) {
             authenticationManager.authenticate(
