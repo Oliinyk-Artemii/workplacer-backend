@@ -2,16 +2,15 @@ package olii.apps.workplacer.auth;
 
 import lombok.RequiredArgsConstructor;
 import olii.apps.workplacer.config.JwtService;
-import olii.apps.workplacer.user.User;
+import olii.apps.workplacer.user.model.User;
 import olii.apps.workplacer.user.UserRepository;
-import olii.apps.workplacer.user.UserType;
+import olii.apps.workplacer.user.model.UserType;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -26,8 +25,8 @@ public class AuthenticationService {
                 .firstName(request.getFirstname())
                 .lastName(request.getLastname())
                 .email(request.getEmail())
-                .companies(new HashSet<>()) // TODO add companies
-                .offices(new HashSet<>()) // TODO add offices
+                .companies(new LinkedList<>()) // TODO add companies
+                .offices(new LinkedList<>()) // TODO add offices
                 .password(passwordEncoder.encode(request.getPassword()))
                 .userType(UserType.OFFICE_MANAGER)
                 .build();
@@ -40,7 +39,7 @@ public class AuthenticationService {
     }
 
 
-    public AuthenticationResponse authenticate(RegisterRequest request) {
+    public AuthenticationResponse login(RegisterRequest request) {
         final Optional<User> userOptional = userRepository.findByEmail(request.getEmail());
         if (userOptional.isPresent()) {
             authenticationManager.authenticate(
@@ -57,6 +56,6 @@ public class AuthenticationService {
                     .token(jwtToken)
                     .build();
         }
-        return AuthenticationResponse.builder().token("null").build();
+        return AuthenticationResponse.builder().build();
     }
 }
