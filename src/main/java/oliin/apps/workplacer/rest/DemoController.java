@@ -1,4 +1,4 @@
-package oliin.apps.workplacer.demo;
+package oliin.apps.workplacer.rest;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
