@@ -31,7 +31,7 @@ public class RegisterController {
     public ResponseEntity<RegisterResponse> signUp(@RequestBody @Valid RegisterController.RegisterRequest request) {
         log.debug("Start user registration with email - {}", request.email);
 
-        String accessToken = signUp.doSignUp(userAuthenticationMapper.toUserCredentials(request), OFFICE_MANAGER);
+        String accessToken = signUp.doSignUp(userAuthenticationMapper.toUserInfo(request), OFFICE_MANAGER);
         return ResponseEntity.status(HttpStatus.CREATED).body(new RegisterResponse(accessToken));
     }
 
