@@ -1,7 +1,7 @@
 package oliin.apps.workplacer.config;
 
 import lombok.RequiredArgsConstructor;
-import oliin.apps.workplacer.user.UserRepository;
+import oliin.apps.workplacer.auth.user.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

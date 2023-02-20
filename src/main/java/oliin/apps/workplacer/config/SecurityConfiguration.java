@@ -14,6 +14,17 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
+    private static final String[] AUTH_WHITELIST = {
+            "/api/v1/register",
+            "/api/v1/login",
+            "/swagger-resources/**",
+            "/swagger-ui/**",
+            "/v3/api-docs/**",
+            "/v3/api-docs",
+            "/webjars/**",
+            "/webjars/**"
+    };
+
     private final JwtAuthenticationFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;
 
@@ -23,7 +34,7 @@ public class SecurityConfiguration {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/v1/user/register", "/api/v1/user/login")
+                .requestMatchers(AUTH_WHITELIST/*"/api/v1/user/register", "/api/v1/user/login", "/swagger-ui", "/api/v2/api-docs"*/)
                 .permitAll()
                 .anyRequest()
                 .authenticated()
