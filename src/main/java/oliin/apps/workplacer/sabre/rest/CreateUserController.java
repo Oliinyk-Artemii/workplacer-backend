@@ -40,6 +40,10 @@ public class CreateUserController {
                                     @JsonProperty("last-name") String lastName,
                                     @NotBlank(message = "Email can't be blank") String email,
                                     @NotBlank(message = "Password can't be blank") String password,
+                                    @NotBlank(message = "Company id can't be blank")
+                                    @JsonProperty("company-id") String companyId,
+                                    @NotBlank(message = "Office id can't be blank")
+                                    @JsonProperty("office-id") String officeId,
                                     @NotNull
                                     @JsonProperty("user-role")
                                     @JsonDeserialize(using = UserRoleDeserializer.class) UserRole userRole) {
