@@ -16,6 +16,7 @@ import java.util.function.Function;
 
 @Service
 public class JwtService {
+    // Placeholder, BE Keystore, move value to yml file
     private static final String SECRET_KEY = "432646294A404E635266556A586E3272357538782F4125442A472D4B61506453";
     private static final int TOKEN_DURATION = 24;
 

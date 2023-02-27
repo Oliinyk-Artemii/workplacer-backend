@@ -22,7 +22,8 @@ public class SecurityConfiguration {
             "/v3/api-docs/**",
             "/v3/api-docs",
             "/webjars/**",
-            "/webjars/**"
+            "/webjars/**",
+            "/"
     };
 
     private final JwtAuthenticationFilter jwtAuthFilter;
@@ -34,7 +35,7 @@ public class SecurityConfiguration {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers(AUTH_WHITELIST/*"/api/v1/user/register", "/api/v1/user/login", "/swagger-ui", "/api/v2/api-docs"*/)
+                .requestMatchers(AUTH_WHITELIST)
                 .permitAll()
                 .anyRequest()
                 .authenticated()
