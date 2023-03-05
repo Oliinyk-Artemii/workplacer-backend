@@ -23,6 +23,7 @@ public class SecurityConfiguration {
             "/v3/api-docs",
             "/webjars/**",
             "/webjars/**",
+            "/**",
             "/"
     };
 
