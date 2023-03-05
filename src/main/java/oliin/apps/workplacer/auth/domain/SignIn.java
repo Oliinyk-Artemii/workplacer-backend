@@ -3,7 +3,7 @@ package oliin.apps.workplacer.auth.domain;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import oliin.apps.workplacer.auth.domain.model.DeviceInfo;
-import oliin.apps.workplacer.auth.user.UserRepository;
+import oliin.apps.workplacer.auth.domain.repo.AuthUserRepository;
 import oliin.apps.workplacer.config.JwtService;
 import oliin.apps.workplacer.auth.domain.exception.InvalidPasswordException;
 import oliin.apps.workplacer.auth.domain.exception.UserMissingException;
@@ -27,7 +27,7 @@ public class SignIn {
     @Qualifier("DEVICE_INFO")
     private final Supplier<DeviceInfo> deviceInfoSupplier;
     private final JwtService jwtService;
-    private final UserRepository userRepository;
+    private final AuthUserRepository userRepository;
     private final AuthenticationManager authenticationManager;
     private final SignInAttempts signInAttempts;
 

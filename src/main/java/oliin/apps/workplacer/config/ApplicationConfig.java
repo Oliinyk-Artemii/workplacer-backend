@@ -1,7 +1,7 @@
 package oliin.apps.workplacer.config;
 
 import lombok.RequiredArgsConstructor;
-import oliin.apps.workplacer.auth.user.UserRepository;
+import oliin.apps.workplacer.auth.domain.repo.AuthUserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,7 +17,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @RequiredArgsConstructor
 public class ApplicationConfig {
 
-    private final UserRepository userRepository;
+    private final AuthUserRepository userRepository;
 
     @Bean
     public UserDetailsService userDetailsService() {

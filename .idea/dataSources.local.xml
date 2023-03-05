@@ -11,9 +11,13 @@
       <user-name>root</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema" qname="@" />
+          <node kind="schema" negative="1" />
         </introspection-scope>
       </schema-mapping>
+    </data-source>
+    <data-source name="@awseb-e-8dpxptkvzs-stack-awsebrdsdatabase-qkanmqrgur9j.c5kwusee9ovf.eu-central-1.rds.amazonaws.com" uuid="90453fc7-7b79-490d-b6c1-8d7ae7620e99">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <schema-mapping />
     </data-source>
   </component>
 </project>

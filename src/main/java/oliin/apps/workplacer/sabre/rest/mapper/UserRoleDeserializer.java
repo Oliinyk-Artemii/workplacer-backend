@@ -12,7 +12,7 @@ import java.io.IOException;
 public class UserRoleDeserializer extends JsonDeserializer<UserRole> {
 
     @Override
-    public UserRole deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, IOException {
+    public UserRole deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
         final ObjectCodec objectCodec = jsonParser.getCodec();
         final JsonNode node = objectCodec.readTree(jsonParser);
         final String type = node.asText().replace("-", "_");
