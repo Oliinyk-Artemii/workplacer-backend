@@ -29,7 +29,6 @@ public class SignIn {
     private final JwtService jwtService;
     private final AuthUserRepository userRepository;
     private final AuthenticationManager authenticationManager;
-    private final SignInAttempts signInAttempts;
 
     public String doSignIn(UserCredentials userCredentials, UserRole officeManager) {
         final Optional<UserModel> userOptional = userRepository.findByEmail(userCredentials.email());
@@ -45,7 +44,6 @@ public class SignIn {
     public void signIn(UserCredentials userCredential) {
         String email = userCredential.email();
         String password = userCredential.password();
-        String deviceId = deviceInfoSupplier.get().id();
         try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
@@ -55,8 +53,7 @@ public class SignIn {
             );
         } catch (AuthenticationException exception) {
             log.error("Invalid password for email {}", email);
-            int remainingAttempts = signInAttempts.incrementFailedAttempts(email, deviceId);
-            throw new InvalidPasswordException(remainingAttempts);
+            throw new InvalidPasswordException();
         }
     }
 }
