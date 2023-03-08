@@ -2,14 +2,14 @@ package oliin.apps.workplacer.auth.domain;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import oliin.apps.workplacer.auth.domain.model.DeviceInfo;
-import oliin.apps.workplacer.auth.domain.repo.AuthUserRepository;
-import oliin.apps.workplacer.config.JwtService;
 import oliin.apps.workplacer.auth.domain.exception.InvalidPasswordException;
 import oliin.apps.workplacer.auth.domain.exception.UserMissingException;
+import oliin.apps.workplacer.auth.domain.model.DeviceInfo;
 import oliin.apps.workplacer.auth.domain.model.UserCredentials;
 import oliin.apps.workplacer.auth.domain.model.UserModel;
 import oliin.apps.workplacer.auth.domain.model.UserRole;
+import oliin.apps.workplacer.config.JwtService;
+import oliin.apps.workplacer.sabre.domain.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -27,18 +27,22 @@ public class SignIn {
     @Qualifier("DEVICE_INFO")
     private final Supplier<DeviceInfo> deviceInfoSupplier;
     private final JwtService jwtService;
-    private final AuthUserRepository userRepository;
+    private final UserRepository userRepository;
     private final AuthenticationManager authenticationManager;
 
-    public String doSignIn(UserCredentials userCredentials, UserRole officeManager) {
+    public UserModel doSignIn(UserCredentials userCredentials, UserRole officeManager) {
         final Optional<UserModel> userOptional = userRepository.findByEmail(userCredentials.email());
         if (userOptional.isPresent()) {
             var user = userOptional.get();
             signIn(userCredentials);
-            return jwtService.generateToken(user);
+            return user;
         } else {
             throw new UserMissingException();
         }
+    }
+
+    public  String generateUserAccessToken(UserModel user) {
+        return  jwtService.generateToken(user);
     }
 
     public void signIn(UserCredentials userCredential) {
