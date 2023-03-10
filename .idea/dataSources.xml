@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="workplacer mysql" uuid="85ef4d18-150a-4a92-af08-841d2f0dbbe1">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="@awseb-e-jrwjpwa99e-stack-awsebrdsdatabase-ai8ctbmbx5ng.ca6gxrdrgtz2.eu-central-1.rds.amazonaws.com" uuid="35f819ae-b367-4701-a32a-a89eb19a02f2">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://awseb-e-jrwjpwa99e-stack-awsebrdsdatabase-ai8ctbmbx5ng.ca6gxrdrgtz2.eu-central-1.rds.amazonaws.com:3306</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>
