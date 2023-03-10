@@ -8,11 +8,11 @@
       <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="@awseb-e-8dpxptkvzs-stack-awsebrdsdatabase-qkanmqrgur9j.c5kwusee9ovf.eu-central-1.rds.amazonaws.com" uuid="90453fc7-7b79-490d-b6c1-8d7ae7620e99">
+    <data-source source="LOCAL" name="@awseb-e-jrwjpwa99e-stack-awsebrdsdatabase-ai8ctbmbx5ng.ca6gxrdrgtz2.eu-central-1.rds.amazonaws.com" uuid="35f819ae-b367-4701-a32a-a89eb19a02f2">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://awseb-e-8dpxptkvzs-stack-awsebrdsdatabase-qkanmqrgur9j.c5kwusee9ovf.eu-central-1.rds.amazonaws.com:3306</jdbc-url>
+      <jdbc-url>jdbc:mysql://awseb-e-jrwjpwa99e-stack-awsebrdsdatabase-ai8ctbmbx5ng.ca6gxrdrgtz2.eu-central-1.rds.amazonaws.com:3306</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

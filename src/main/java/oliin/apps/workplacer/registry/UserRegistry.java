@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import oliin.apps.workplacer.auth.domain.exception.UserExistsException;
 import oliin.apps.workplacer.auth.domain.model.UserModel;
 import oliin.apps.workplacer.auth.domain.model.UserRole;
-import oliin.apps.workplacer.auth.domain.repo.AuthUserRepository;
+import oliin.apps.workplacer.sabre.domain.repo.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +16,7 @@ import java.util.LinkedList;
 @RequiredArgsConstructor
 public class UserRegistry {
     private final PasswordEncoder passwordEncoder;
-    private final AuthUserRepository userRepository;
+    private final UserRepository userRepository;
 
 
     public UserModel createUser(String email, String password, UserRole role) {

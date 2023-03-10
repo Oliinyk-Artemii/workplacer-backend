@@ -2,10 +2,8 @@ package oliin.apps.workplacer.auth.rest.advice;
 
 import lombok.extern.slf4j.Slf4j;
 import oliin.apps.workplacer.auth.domain.exception.InvalidPasswordException;
-import oliin.apps.workplacer.auth.domain.exception.MaxLoginAttemptsReachedException;
 import oliin.apps.workplacer.auth.domain.exception.UserMissingException;
 import oliin.apps.workplacer.auth.rest.LoginController;
-import oliin.apps.workplacer.auth.rest.advice.wrapper.ErrorData;
 import oliin.apps.workplacer.auth.rest.advice.wrapper.ErrorResponseWrapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -25,20 +23,8 @@ public class LoginControllerAdvice {
 
     @ExceptionHandler(InvalidPasswordException.class)
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    public ErrorResponseWrapper invalidPassword(InvalidPasswordException exception) {
+    public ErrorResponseWrapper invalidPassword() {
         log.error("Handling invalid user passcode for login");
-        ErrorData errorData = new ErrorData();
-        errorData.setRemainingAttempts(exception.getRemainingAttempts());
-        return new ErrorResponseWrapper("invalid-passcode", "Invalid user's passcode", errorData);
-    }
-
-    @ExceptionHandler(MaxLoginAttemptsReachedException.class)
-    @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    public ErrorResponseWrapper maxLoginAttemptsReached(MaxLoginAttemptsReachedException exception) {
-        log.error("Handling max login attempts reached");
-        ErrorData errorData = new ErrorData();
-        errorData.setRetryAfterSeconds(exception.getRetryAfterSeconds());
-        return new ErrorResponseWrapper("max-login-attempts-reached",
-                "User has reached a limit of max login attempts", errorData);
+        return new ErrorResponseWrapper("invalid-passcode", "Invalid user's passcode");
     }
 }
