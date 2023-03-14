@@ -7,7 +7,7 @@ import oliin.apps.workplacer.domain.exception.UserMissingException;
 import oliin.apps.workplacer.domain.model.DeviceInfo;
 import oliin.apps.workplacer.domain.model.UserCredentials;
 import oliin.apps.workplacer.domain.model.UserModel;
-import oliin.apps.workplacer.domain.model.UserRole;
+import oliin.apps.workplacer.rest.model.UserRole;
 import oliin.apps.workplacer.config.JwtService;
 import oliin.apps.workplacer.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Qualifier;

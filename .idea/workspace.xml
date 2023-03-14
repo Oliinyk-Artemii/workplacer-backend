@@ -5,42 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f25d1d50-56c2-429e-9fc0-932ed906c8f7" name="Changes" comment="Refactor project">
+      <change afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/exception/UserRoleMissingException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/mapper/UserRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/Privilege.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/PrivilegeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/SetupDataLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/domain/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/domain/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/domain/exception/InvalidPasswordException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/exception/InvalidPasswordException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/domain/exception/UserExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/exception/UserExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/domain/exception/UserMissingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/exception/UserMissingException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/domain/model/DeviceInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/DeviceInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/domain/model/DeviceInfoStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/DeviceInfoStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/domain/model/UserCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/UserCredentials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/domain/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/UserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/domain/model/UserRegistrationInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/UserRegistrationInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/domain/model/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/rest/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/DemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/rest/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/rest/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/rest/advice/LoginControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/advice/LoginControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/rest/advice/RegisterControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/advice/RegisterControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/rest/advice/wrapper/ErrorData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/advice/wrapper/ErrorData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/rest/advice/wrapper/ErrorResponseWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/advice/wrapper/ErrorResponseWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/rest/filter/DeviceInfoStorageFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/filter/DeviceInfoStorageFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/rest/mapper/UserAuthenticationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/mapper/UserAuthenticationMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/auth/rest/mapper/UserSessionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/mapper/UserSessionMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/ApplicationConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/registry/UserRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/CreateUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/sabre/domain/CreateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/CreateUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/sabre/domain/PasswordGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/PasswordGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/sabre/domain/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/sabre/domain/model/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/sabre/domain/repo/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/sabre/rest/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/CreateUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/sabre/rest/HealthCheckController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/HealthCheckController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/sabre/rest/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/sabre/rest/mapper/RoleMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/sabre/rest/mapper/UserInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/mapper/UserInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/sabre/rest/mapper/UserRoleDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/mapper/UserRoleDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/CreateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/CreateUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/model/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/CreateUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/CreateUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/CreateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/mapper/UserRoleDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/mapper/UserRoleDeserializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +229,7 @@
       <workItem from="1676999695167" duration="7067000" />
       <workItem from="1677009383733" duration="299000" />
       <workItem from="1678116334487" duration="3550000" />
-      <workItem from="1678214848863" duration="26909000" />
+      <workItem from="1678214848863" duration="45833000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1674502336358</created>
@@ -357,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678308486632</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Refactor project">
+      <created>1678484256113</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1678484256113</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,6 +398,15 @@
           </properties>
           <option name="timeStamp" value="58" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtService.java</url>
+          <line>44</line>
+          <properties class="oliin.apps.workplacer.config.JwtService" method="generateToken">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="221" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/UserController.java</url>
           <line>28</line>
@@ -434,6 +436,206 @@
           <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtService.java</url>
           <line>31</line>
           <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/RegisterController.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="168" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtService.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="194" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/LoginController.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="200" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/LoginController.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="201" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/LoginController.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/LoginController.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="203" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="206" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="207" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="208" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="209" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="210" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="211" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="213" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="214" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="215" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="216" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="217" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="218" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/SignIn.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="219" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtService.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="220" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtAuthenticationFilter.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="222" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtAuthenticationFilter.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="223" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtAuthenticationFilter.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="224" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtAuthenticationFilter.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="225" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtAuthenticationFilter.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="226" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtAuthenticationFilter.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="227" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtAuthenticationFilter.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="228" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtAuthenticationFilter.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="229" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtAuthenticationFilter.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="230" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtAuthenticationFilter.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="231" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtAuthenticationFilter.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="232" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtAuthenticationFilter.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="233" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtAuthenticationFilter.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="234" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/filter/DeviceInfoStorageFilter.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="235" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/filter/DeviceInfoStorageFilter.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="236" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/filter/DeviceInfoStorageFilter.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="237" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/filter/DeviceInfoStorageFilter.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="238" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/filter/DeviceInfoStorageFilter.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="239" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/filter/DeviceInfoStorageFilter.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="240" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

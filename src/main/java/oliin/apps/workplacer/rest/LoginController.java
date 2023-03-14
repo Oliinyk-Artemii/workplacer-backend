@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import static oliin.apps.workplacer.domain.model.UserRole.OFFICE_MANAGER;
+import static oliin.apps.workplacer.rest.model.UserRole.OFFICE_MANAGER;
 
 @Slf4j
 @RestController

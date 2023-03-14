@@ -8,6 +8,7 @@ import oliin.apps.workplacer.domain.model.UserModel;
 import oliin.apps.workplacer.domain.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,6 +25,7 @@ public class UserController {
 //    private final UserInfoMapper userInfoMapper;
 
     @GetMapping
+    @PreAuthorize("hasAnyRole('OFFICE_MANAGER', 'FLOOR_MANAGER')")
     public ResponseEntity<OfficeUserResponse> getOfficeUsers(@NotBlank(message = "Office id can't be blank")
                                                              @RequestParam(name = "office-id") String officeId) {
         log.debug("Get users of office with id - {}", officeId);

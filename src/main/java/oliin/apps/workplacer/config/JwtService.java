@@ -51,7 +51,7 @@ public class JwtService {
                 .builder()
                 .setClaims(extraClaims)
                 .setSubject(userModel.getUsername())
-                .claim("user_model", userModel)
+//                .claim("user_model", userModel) // TODO Question to mentor, why it does not work after roles implementation
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * TOKEN_DURATION))
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)

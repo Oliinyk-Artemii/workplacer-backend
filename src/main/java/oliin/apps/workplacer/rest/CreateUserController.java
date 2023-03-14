@@ -8,10 +8,10 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import oliin.apps.workplacer.domain.model.UserRole;
 import oliin.apps.workplacer.domain.CreateUser;
 import oliin.apps.workplacer.rest.mapper.UserInfoMapper;
 import oliin.apps.workplacer.rest.mapper.UserRoleDeserializer;
+import oliin.apps.workplacer.rest.model.UserRole;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,7 +32,7 @@ public class CreateUserController {
     public ResponseEntity<CreateUserResponse> createUser(@RequestBody @Valid CreateUserRequest request) {
         log.debug("Create user with email - {}", request.email());
 
-        String userId = createUser.doCreateUser(userInfoMapper.toUserInfo(request), request.userRole());
+        String userId = createUser.doCreateUser(userInfoMapper.toUserInfo(request), request.userRole().name());
         return ResponseEntity.status(HttpStatus.CREATED).body(new CreateUserResponse(userId));
     }
 

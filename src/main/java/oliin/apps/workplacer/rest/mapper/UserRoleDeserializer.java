@@ -5,7 +5,7 @@ import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
-import oliin.apps.workplacer.domain.model.UserRole;
+import oliin.apps.workplacer.rest.model.UserRole;
 
 import java.io.IOException;
 
