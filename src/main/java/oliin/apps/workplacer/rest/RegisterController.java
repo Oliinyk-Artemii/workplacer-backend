@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import oliin.apps.workplacer.domain.SignUp;
 import oliin.apps.workplacer.rest.mapper.UserAuthenticationMapper;
-import oliin.apps.workplacer.rest.model.UserRole;
+import oliin.apps.workplacer.rest.model.AuthorityType;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,7 +29,7 @@ public class RegisterController {
     public ResponseEntity<RegisterResponse> signUp(@RequestBody @Valid RegisterController.RegisterRequest request) {
         log.debug("Start user registration with email - {}", request.email);
 
-        String accessToken = signUp.doSignUp(userAuthenticationMapper.toUserInfo(request), UserRole.OFFICE_MANAGER.toString());
+        String accessToken = signUp.doSignUp(userAuthenticationMapper.toUserInfo(request), AuthorityType.OFFICE_MANAGER);
         return ResponseEntity.status(HttpStatus.CREATED).body(new RegisterResponse(accessToken));
     }
 

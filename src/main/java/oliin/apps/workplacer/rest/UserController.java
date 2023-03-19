@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import oliin.apps.workplacer.domain.model.UserModel;
+import oliin.apps.workplacer.domain.model.User;
 import oliin.apps.workplacer.domain.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +35,6 @@ public class UserController {
     }
 
     public record OfficeUserResponse(@JsonProperty("default-password") String defaultPassword,
-                                     @JsonProperty("users") List<UserModel> users) {
+                                     @JsonProperty("users") List<User> users) {
     }
 }

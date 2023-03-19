@@ -3,13 +3,13 @@ package oliin.apps.workplacer.domain.repository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import oliin.apps.workplacer.domain.exception.UserExistsException;
-import oliin.apps.workplacer.domain.model.Role;
-import oliin.apps.workplacer.domain.model.UserModel;
+import oliin.apps.workplacer.domain.model.User;
+import oliin.apps.workplacer.rest.model.AuthorityType;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Set;
 
 @Slf4j
 @Component
@@ -19,19 +19,19 @@ public class CreateUserRepository {
     private final UserRepository userRepository;
 
 
-    public UserModel createUser(String email, String password, Role role) {
+    public User createUser(String email, String password, AuthorityType authorityType) {
         if (userRepository.findByEmail(email).isPresent()) {
             log.error("The user with email {} is already registered", email);
             throw new UserExistsException("User already exists");
         }
 
-        var user = UserModel.builder()
+        var user = User.builder()
                 .email(email)
                 .password(passwordEncoder.encode(password))
 //                .userType(role)
                 .firstName("")
                 .lastName("")
-                .roles(Arrays.asList(role))
+                .roles(Set.of(authorityType))
                 .companies(new LinkedList<>()) // TODO add companies
                 .offices(new LinkedList<>()) // TODO add offices
                 .build();
@@ -41,7 +41,7 @@ public class CreateUserRepository {
         return user;
     }
 
-    public UserModel createUser(String email, String password, Role role, String firstName, String lastName, String companyId, String officeId) {
+    public User createUser(String email, String password, AuthorityType authorityType, String firstName, String lastName, String companyId, String officeId) {
         if (userRepository.findByEmail(email).isPresent()) {
             log.error("The user with email {} is already registered", email);
             throw new UserExistsException("User already exists");
@@ -51,10 +51,10 @@ public class CreateUserRepository {
         companyIds.add(companyId);
         officeIds.add(officeId);
 
-        var user = UserModel.builder()
+        var user = User.builder()
                 .email(email)
                 .password(passwordEncoder.encode(password))
-                .roles(Arrays.asList(role))
+                .roles(Set.of(authorityType))
                 .firstName(firstName)
                 .lastName(lastName)
                 .companies(companyIds)
