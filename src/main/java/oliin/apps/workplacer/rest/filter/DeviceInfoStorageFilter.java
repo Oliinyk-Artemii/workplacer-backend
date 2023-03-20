@@ -12,7 +12,7 @@ import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import oliin.apps.workplacer.domain.model.DeviceInfo;
 import oliin.apps.workplacer.domain.model.DeviceInfoStorage;
-import oliin.apps.workplacer.rest.advice.wrapper.ErrorResponseWrapper;
+import oliin.apps.workplacer.rest.feature.user.advice.wrapper.ErrorResponseWrapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
