@@ -5,17 +5,17 @@ import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
-import oliin.apps.workplacer.domain.model.UserRole;
+import oliin.apps.workplacer.rest.model.AuthorityType;
 
 import java.io.IOException;
 
-public class UserRoleDeserializer extends JsonDeserializer<UserRole> {
+public class UserRoleDeserializer extends JsonDeserializer<AuthorityType> {
 
     @Override
-    public UserRole deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
+    public AuthorityType deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
         final ObjectCodec objectCodec = jsonParser.getCodec();
         final JsonNode node = objectCodec.readTree(jsonParser);
         final String type = node.asText().replace("-", "_");
-        return UserRole.valueOf(type.toUpperCase());
+        return AuthorityType.valueOf(type.toUpperCase());
     }
 }

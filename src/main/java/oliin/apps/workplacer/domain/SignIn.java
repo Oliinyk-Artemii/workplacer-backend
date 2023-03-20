@@ -2,18 +2,18 @@ package oliin.apps.workplacer.domain;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import oliin.apps.workplacer.config.JwtService;
 import oliin.apps.workplacer.domain.exception.InvalidPasswordException;
 import oliin.apps.workplacer.domain.exception.UserMissingException;
 import oliin.apps.workplacer.domain.model.DeviceInfo;
 import oliin.apps.workplacer.domain.model.UserCredentials;
-import oliin.apps.workplacer.domain.model.UserModel;
-import oliin.apps.workplacer.domain.model.UserRole;
-import oliin.apps.workplacer.config.JwtService;
+import oliin.apps.workplacer.domain.model.User;
 import oliin.apps.workplacer.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -29,20 +29,20 @@ public class SignIn {
     private final JwtService jwtService;
     private final UserRepository userRepository;
     private final AuthenticationManager authenticationManager;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserModel doSignIn(UserCredentials userCredentials, UserRole officeManager) {
-        final Optional<UserModel> userOptional = userRepository.findByEmail(userCredentials.email());
-        if (userOptional.isPresent()) {
-            var user = userOptional.get();
+    public User doSignIn(UserCredentials userCredentials) {
+        final Optional<User> userOptional = userRepository.findByEmail(userCredentials.email());
+        return userOptional.map((user) -> {
             signIn(userCredentials);
             return user;
-        } else {
-            throw new UserMissingException();
-        }
+
+
+        }).orElseThrow(UserMissingException::new);
     }
 
-    public  String generateUserAccessToken(UserModel user) {
-        return  jwtService.generateToken(user);
+    public String generateUserAccessToken(User user) {
+        return jwtService.generateToken(user);
     }
 
     public void signIn(UserCredentials userCredential) {

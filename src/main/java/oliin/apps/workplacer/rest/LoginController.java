@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import oliin.apps.workplacer.domain.SignIn;
-import oliin.apps.workplacer.domain.model.UserModel;
+import oliin.apps.workplacer.domain.model.User;
 import oliin.apps.workplacer.rest.mapper.UserSessionMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import static oliin.apps.workplacer.domain.model.UserRole.OFFICE_MANAGER;
 
 @Slf4j
 @RestController
@@ -31,7 +29,7 @@ public class LoginController {
     public ResponseEntity<LoginResponse> login(@RequestBody @Valid LoginRequest request) {
         log.debug("Login user with email - {}", request.email());
 
-        UserModel user = signIn.doSignIn(userSessionMapper.toUserCredentials(request), OFFICE_MANAGER);
+        User user = signIn.doSignIn(userSessionMapper.toUserCredentials(request));
         String accessToken = signIn.generateUserAccessToken(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(new LoginResponse(accessToken, user));
     }
@@ -41,6 +39,6 @@ public class LoginController {
     }
 
     public record LoginResponse(@JsonProperty("access-token") String accessToken,
-                                @JsonProperty("user-model") UserModel user) {
+                                @JsonProperty("user-model") User user) {
     }
 }

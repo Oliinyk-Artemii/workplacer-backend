@@ -1,49 +1,43 @@
 package oliin.apps.workplacer.domain.model;
 
-
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenericGenerator;
+import lombok.RequiredArgsConstructor;
+import oliin.apps.workplacer.rest.model.AuthorityType;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-@Table(name = "user_model")
-public class UserModel implements UserDetails {
-    @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    private String id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String password;
-    @ElementCollection
-    private List<String> companies;
-    @ElementCollection
-    private List<String> offices;
-    @Enumerated(EnumType.STRING)
-    private UserRole userType;
+@RequiredArgsConstructor
+public class UserDetailsImpl implements UserDetails {
+    private final User user;
 
     @Override
+    @Transactional
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(userType.name()));
+        Set<AuthorityType> roles = user.getRoles();
+        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+
+        for (AuthorityType authorityType : roles) {
+            authorities.add(new SimpleGrantedAuthority(authorityType.toString()));
+        }
+
+        return authorities;
+    }
+
+    @Override
+    public String getPassword() {
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return email;
+        return user.getEmail();
     }
 
     @Override

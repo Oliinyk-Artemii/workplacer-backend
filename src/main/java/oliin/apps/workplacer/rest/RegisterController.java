@@ -6,8 +6,9 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import oliin.apps.workplacer.domain.SignUp;
-import oliin.apps.workplacer.domain.model.UserRole;
+import oliin.apps.workplacer.rest.mapper.CreateUserMapper;
 import oliin.apps.workplacer.rest.mapper.UserAuthenticationMapper;
+import oliin.apps.workplacer.rest.model.AuthorityType;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,14 +23,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class RegisterController {
 
     private final SignUp signUp;
-    private final UserAuthenticationMapper userAuthenticationMapper;
-//    private final DeviceTokenService deviceTokenService;
+    private final CreateUserMapper createUserMapper;
 
     @PostMapping
     public ResponseEntity<RegisterResponse> signUp(@RequestBody @Valid RegisterController.RegisterRequest request) {
         log.debug("Start user registration with email - {}", request.email);
 
-        String accessToken = signUp.doSignUp(userAuthenticationMapper.toUserInfo(request), UserRole.OFFICE_MANAGER);
+        String accessToken = signUp.doSignUp(createUserMapper.toCreateUserRequest(request));
         return ResponseEntity.status(HttpStatus.CREATED).body(new RegisterResponse(accessToken));
     }
 

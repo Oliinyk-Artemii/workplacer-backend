@@ -8,12 +8,14 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import oliin.apps.workplacer.domain.model.UserRole;
 import oliin.apps.workplacer.domain.CreateUser;
+import oliin.apps.workplacer.rest.mapper.CreateUserMapper;
 import oliin.apps.workplacer.rest.mapper.UserInfoMapper;
 import oliin.apps.workplacer.rest.mapper.UserRoleDeserializer;
+import oliin.apps.workplacer.rest.model.AuthorityType;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,13 +28,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class CreateUserController {
     private final CreateUser createUser;
-    private final UserInfoMapper userInfoMapper;
+    private final CreateUserMapper createUserMapper;
 
     @PostMapping
     public ResponseEntity<CreateUserResponse> createUser(@RequestBody @Valid CreateUserRequest request) {
         log.debug("Create user with email - {}", request.email());
 
-        String userId = createUser.doCreateUser(userInfoMapper.toUserInfo(request), request.userRole());
+        String userId = createUser.doCreateUser(createUserMapper.toCreateUserRequest(request));
         return ResponseEntity.status(HttpStatus.CREATED).body(new CreateUserResponse(userId));
     }
 
@@ -46,7 +48,7 @@ public class CreateUserController {
                                     @JsonProperty("office-id") String officeId,
                                     @NotNull
                                     @JsonProperty("user-role")
-                                    @JsonDeserialize(using = UserRoleDeserializer.class) UserRole userRole) {
+                                    @JsonDeserialize(using = UserRoleDeserializer.class) AuthorityType authorityType) {
     }
 
     public record CreateUserResponse(@JsonProperty("user-id") String userId) {
