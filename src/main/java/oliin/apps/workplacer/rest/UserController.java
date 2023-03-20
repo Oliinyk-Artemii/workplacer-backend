@@ -4,8 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import oliin.apps.workplacer.domain.model.User;
 import oliin.apps.workplacer.domain.UserService;
+import oliin.apps.workplacer.rest.mapper.UserResponseMapper;
+import oliin.apps.workplacer.rest.model.UserResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -22,7 +23,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
-//    private final UserInfoMapper userInfoMapper;
+    private final UserResponseMapper userResponseMapper;
 
     @GetMapping
     @PreAuthorize("hasAnyRole('OFFICE_MANAGER', 'FLOOR_MANAGER')")
@@ -30,11 +31,13 @@ public class UserController {
                                                              @RequestParam(name = "office-id") String officeId) {
         log.debug("Get users of office with id - {}", officeId);
 
-        OfficeUserResponse response = userService.doGetOfficeUsers(officeId);
-        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+        final List<UserResponse> users = userService.doGetOfficeUsers(officeId).stream().map(userResponseMapper::toUserResponse).toList();
+        final String randomPassword = userService.generatePassword();
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(new OfficeUserResponse(randomPassword, users));
     }
 
     public record OfficeUserResponse(@JsonProperty("default-password") String defaultPassword,
-                                     @JsonProperty("users") List<User> users) {
+                                     @JsonProperty("users") List<UserResponse> users) {
     }
 }
