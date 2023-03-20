@@ -19,7 +19,7 @@ public class UserService {
 
     public UserController.OfficeUserResponse doGetOfficeUsers(String officeId) {
         final String password = passwordGenerator.generatePassword();
-        final Optional<List<User>> users = userRepository.findAllByOfficesContains(officeId);
+        final Optional<List<User>> users = userRepository.findAllByOfficeIdsContains(officeId);
 
         return users.map(
                         userModels -> new UserController.OfficeUserResponse(password, userModels))

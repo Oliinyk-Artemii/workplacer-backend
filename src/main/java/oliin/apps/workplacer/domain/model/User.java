@@ -7,6 +7,7 @@ import oliin.apps.workplacer.rest.model.AuthorityType;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -23,12 +24,15 @@ public class User implements Serializable {
     private String id;
     private String firstName;
     private String lastName;
+    @Column(name = "email", unique = true)
     private String email;
     private String password;
     @ElementCollection
-    private List<String> companies;
+    @Column(name = "company-ids")
+    private Set<String> companyIds;
     @ElementCollection
-    private List<String> offices;
+    @Column(name = "office-ids")
+    private Set<String> officeIds;
 //    @Enumerated(EnumType.STRING)
 //    private UserRoles userType;
 

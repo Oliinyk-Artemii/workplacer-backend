@@ -1,21 +1,24 @@
 package oliin.apps.workplacer.domain.model;
 
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import oliin.apps.workplacer.rest.model.AuthorityType;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class UserDetailsImpl implements UserDetails {
     private final User user;
 
     @Override
+    @Transactional
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Set<AuthorityType> roles = user.getRoles();
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
