@@ -10,6 +10,7 @@ import oliin.apps.workplacer.domain.model.User;
 import oliin.apps.workplacer.rest.mapper.UserResponseMapper;
 import oliin.apps.workplacer.rest.mapper.UserSessionMapper;
 import oliin.apps.workplacer.rest.model.AuthorityType;
+import oliin.apps.workplacer.rest.model.UserResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,18 +46,5 @@ public class LoginController {
 
     public record LoginResponse(@JsonProperty("access-token") String accessToken,
                                 @JsonProperty("user-model") UserResponse userResponse) {
-    }
-
-    // TODO move to separate endpoint
-    public record UserResponse(@JsonProperty("id") String id,
-                               @JsonProperty("first-name") String firstName,
-                               @JsonProperty("last-name") String lastName,
-                               @JsonProperty("email") String email,
-                               @JsonProperty("company-ids") Set<String> companyIds,
-
-                               @JsonProperty("office-ids") Set<String> officeIds,
-                               @JsonProperty("user-role") AuthorityType role
-
-    ) {
     }
 }
