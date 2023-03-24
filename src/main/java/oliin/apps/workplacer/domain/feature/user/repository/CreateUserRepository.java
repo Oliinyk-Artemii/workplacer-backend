@@ -7,9 +7,6 @@ import oliin.apps.workplacer.domain.feature.company.repository.CompanyRepository
 import oliin.apps.workplacer.domain.feature.user.exception.UserExistsException;
 import oliin.apps.workplacer.domain.feature.user.model.CreateUserRequest;
 import oliin.apps.workplacer.domain.feature.user.model.User;
-import oliin.apps.workplacer.domain.model.UserCompany;
-import oliin.apps.workplacer.domain.model.UserCompanyId;
-import oliin.apps.workplacer.domain.repository.UserCompanyRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -23,7 +20,6 @@ import java.util.Set;
 public class CreateUserRepository {
     private final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
-    private final UserCompanyRepository userCompanyRepository;
     private final CompanyRepository companyRepository;
 
 
@@ -33,7 +29,8 @@ public class CreateUserRepository {
             throw new UserExistsException("User already exists");
         }
 
-        Optional<Set<Company>> companies = companyRepository.findCompaniesByIdIn(request.getCompanyIds());
+        final Optional<Set<Company>> companiesOptional = companyRepository.findCompaniesByIdIn(request.getCompanyIds());
+        final Set<Company> companies = companiesOptional.orElseGet(HashSet::new);
 
         var user = User.builder()
                 .email(request.getEmail())
@@ -41,21 +38,12 @@ public class CreateUserRepository {
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
                 .roles(request.getAuthorities())
-                .companies(new HashSet<>())
+                .companies(companies)
                 .officeIds(request.getOfficeIds())
                 .build();
-        companies.ifPresent(companySet -> companySet.forEach(user::addCompany));
 
         userRepository.save(user);
         log.info("Created the user {}", request.getEmail());
         return user;
-    }
-
-    private UserCompany createUserCompany(User user, Company company) {
-        return UserCompany
-                .builder()
-                .company(company)
-                .user(user)
-                .build();
     }
 }

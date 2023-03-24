@@ -5,8 +5,6 @@ import oliin.apps.workplacer.domain.feature.company.model.Company;
 import oliin.apps.workplacer.domain.feature.company.repository.CompanyRepository;
 import oliin.apps.workplacer.domain.feature.user.model.User;
 import oliin.apps.workplacer.domain.feature.user.repository.UserRepository;
-import oliin.apps.workplacer.domain.model.UserCompany;
-import oliin.apps.workplacer.domain.model.UserCompanyId;
 import oliin.apps.workplacer.rest.feature.user.model.AuthorityType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
@@ -16,6 +14,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 
 @RequiredArgsConstructor
@@ -29,8 +28,6 @@ public class SetupDataLoader implements
     private UserRepository userRepository;
     @Autowired
     private CompanyRepository companyRepository;
-    @Autowired
-    private UserCompanyRepository userCompanyRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -43,7 +40,6 @@ public class SetupDataLoader implements
                 .name("Company name")
                 .isActive(true)
                 .build();
-        companyRepository.save(company);
 
         User officeManger = new User();
         officeManger.setFirstName("Office");
@@ -51,9 +47,7 @@ public class SetupDataLoader implements
         officeManger.setPassword(passwordEncoder.encode("test"));
         officeManger.setEmail("manager");
         officeManger.setRoles(Set.of(AuthorityType.OFFICE_MANAGER));
-        officeManger.setCompanies(Collections.emptySet());
-        officeManger.addCompany(company);
-        userRepository.save(officeManger);
+        officeManger.setCompanies(new HashSet<>());
 
         User employee = new User();
         employee.setFirstName("Employee");
@@ -61,23 +55,11 @@ public class SetupDataLoader implements
         employee.setPassword(passwordEncoder.encode("test"));
         employee.setEmail("employee");
         employee.setRoles(Set.of(AuthorityType.EMPLOYEE));
-        officeManger.setCompanies(Collections.emptySet());
-        employee.addCompany(company);
+        officeManger.setCompanies(new HashSet<>());
+
+        userRepository.save(officeManger);
         userRepository.save(employee);
-
-        UserCompany userCompanyEmployee = UserCompany.builder()
-                .user(employee)
-                .company(company)
-                .id(new UserCompanyId(employee.getId(), company.getId()))
-                .build();
-        userCompanyRepository.save(userCompanyEmployee);
-
-        UserCompany userCompanyOfficeManager = UserCompany.builder()
-                .user(officeManger)
-                .company(company)
-                .id(new UserCompanyId(officeManger.getId(), company.getId()))
-                .build();
-        userCompanyRepository.save(userCompanyOfficeManager);
+        companyRepository.save(company);
 
         alreadySetup = true;
     }
