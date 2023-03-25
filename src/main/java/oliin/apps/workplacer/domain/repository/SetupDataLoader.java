@@ -1,9 +1,11 @@
 package oliin.apps.workplacer.domain.repository;
 
 import lombok.RequiredArgsConstructor;
-import oliin.apps.workplacer.domain.feature.company.model.Company;
+import oliin.apps.workplacer.domain.feature.office.repository.OfficeRepository;
+import oliin.apps.workplacer.domain.model.Company;
 import oliin.apps.workplacer.domain.feature.company.repository.CompanyRepository;
-import oliin.apps.workplacer.domain.feature.user.model.User;
+import oliin.apps.workplacer.domain.model.Office;
+import oliin.apps.workplacer.domain.model.user.User;
 import oliin.apps.workplacer.domain.feature.user.repository.UserRepository;
 import oliin.apps.workplacer.rest.feature.user.model.AuthorityType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @RequiredArgsConstructor
 @Component
@@ -27,6 +28,8 @@ public class SetupDataLoader implements
     private UserRepository userRepository;
     @Autowired
     private CompanyRepository companyRepository;
+    @Autowired
+    private OfficeRepository officeRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -40,6 +43,14 @@ public class SetupDataLoader implements
                 .name("Company name")
                 .isActive(true)
                 .build();
+
+        Office office = Office
+                .builder()
+                .name("Office name")
+                .isActive(true)
+                .build();
+
+        office.setCompany(company);
 
         User officeManger = new User();
         officeManger.setFirstName("Office");
@@ -59,8 +70,11 @@ public class SetupDataLoader implements
 
         company.addUser(officeManger);
         company.addUser(employee);
+        office.addUser(officeManger);
+        office.addUser(employee);
 
         companyRepository.save(company);
+        officeRepository.save(office);
 
         alreadySetup = true;
     }

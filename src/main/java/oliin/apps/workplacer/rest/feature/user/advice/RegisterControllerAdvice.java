@@ -1,7 +1,7 @@
 package oliin.apps.workplacer.rest.feature.user.advice;
 
 import lombok.extern.slf4j.Slf4j;
-import oliin.apps.workplacer.domain.feature.user.exception.UserExistsException;
+import oliin.apps.workplacer.domain.exception.UserExistsException;
 import oliin.apps.workplacer.rest.feature.user.RegisterController;
 import oliin.apps.workplacer.rest.advice.wrapper.ErrorResponseWrapper;
 import org.springframework.http.HttpStatus;

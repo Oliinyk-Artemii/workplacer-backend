@@ -1,37 +1,44 @@
-package oliin.apps.workplacer.domain.feature.company.model;
+package oliin.apps.workplacer.domain.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
-import oliin.apps.workplacer.domain.feature.user.model.User;
+import oliin.apps.workplacer.domain.model.user.User;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "companies")
+@Table(name = "offices")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Company {
+public class Office {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
-    @Column(name = "company_id")
+    @Column(name = "office_id")
     @Getter
     private String id;
-    @Column(name = "name")
+    @Getter
     private String name;
     @Column(name = "active")
     private boolean isActive;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinTable(
-            name = "user_companies",
+            name = "user_offices",
             joinColumns = {@JoinColumn(name = "user_id")},
-            inverseJoinColumns = {@JoinColumn(name = "company_id")}
+            inverseJoinColumns = {@JoinColumn(name = "office_id")}
     )
     private Set<User> users = new HashSet<>();
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @JoinTable(
+            name = "company_offices",
+            joinColumns = {@JoinColumn(name = "office_id")},
+            inverseJoinColumns = {@JoinColumn(name = "company_id")}
+    )
+    private Company company;
 
     public void addUser(User user) {
         if (users == null) {
@@ -40,6 +47,11 @@ public class Company {
         } else {
             users.add(user);
         }
-        user.getCompanies().add(this);
+        user.getOffices().add(this);
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+        company.setOffice(this);
     }
 }

@@ -1,4 +1,4 @@
-package oliin.apps.workplacer.domain.feature.user.model;
+package oliin.apps.workplacer.domain.model.user;
 
 import lombok.RequiredArgsConstructor;
 import oliin.apps.workplacer.rest.feature.user.model.AuthorityType;

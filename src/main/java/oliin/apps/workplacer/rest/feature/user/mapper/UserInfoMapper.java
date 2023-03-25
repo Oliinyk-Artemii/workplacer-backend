@@ -1,6 +1,6 @@
 package oliin.apps.workplacer.rest.feature.user.mapper;
 
-import oliin.apps.workplacer.domain.feature.user.model.UserInfo;
+import oliin.apps.workplacer.domain.model.user.UserInfo;
 import oliin.apps.workplacer.rest.feature.user.CreateUserController;
 import org.mapstruct.Mapper;
 import org.mapstruct.MapperConfig;

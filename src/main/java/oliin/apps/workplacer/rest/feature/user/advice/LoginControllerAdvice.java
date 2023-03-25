@@ -1,8 +1,8 @@
 package oliin.apps.workplacer.rest.feature.user.advice;
 
 import lombok.extern.slf4j.Slf4j;
-import oliin.apps.workplacer.domain.feature.user.exception.InvalidPasswordException;
-import oliin.apps.workplacer.domain.feature.user.exception.UserMissingException;
+import oliin.apps.workplacer.domain.exception.InvalidPasswordException;
+import oliin.apps.workplacer.domain.exception.UserMissingException;
 import oliin.apps.workplacer.rest.feature.user.LoginController;
 import oliin.apps.workplacer.rest.advice.wrapper.ErrorResponseWrapper;
 import org.springframework.http.HttpStatus;

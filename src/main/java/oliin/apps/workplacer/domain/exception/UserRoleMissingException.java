@@ -1,4 +1,4 @@
-package oliin.apps.workplacer.domain.feature.user.exception;
+package oliin.apps.workplacer.domain.exception;
 
 import lombok.experimental.StandardException;
 
