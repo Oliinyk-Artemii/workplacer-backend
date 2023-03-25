@@ -33,7 +33,6 @@ public class User implements Serializable {
     @Column(name = "email", unique = true)
     private String email;
     private String password;
-    @JsonIgnore
     @ManyToMany(mappedBy = "users", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     @Column(name = "companies", nullable = false)
     private Set<Company> companies = new HashSet<>();

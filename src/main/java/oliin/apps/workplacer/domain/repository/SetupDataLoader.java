@@ -13,7 +13,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -35,6 +34,7 @@ public class SetupDataLoader implements
     @Override
     @Transactional
     public void onApplicationEvent(ContextRefreshedEvent event) {
+        if (alreadySetup) return;
 
         Company company = Company.builder()
                 .name("Company name")
@@ -56,6 +56,9 @@ public class SetupDataLoader implements
         employee.setEmail("employee");
         employee.setRoles(Set.of(AuthorityType.EMPLOYEE));
         officeManger.setCompanies(new HashSet<>());
+
+        company.addUser(officeManger);
+        company.addUser(employee);
 
         userRepository.save(officeManger);
         userRepository.save(employee);

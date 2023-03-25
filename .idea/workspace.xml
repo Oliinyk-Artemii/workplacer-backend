@@ -6,12 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f25d1d50-56c2-429e-9fc0-932ed906c8f7" name="Changes" comment="Try to join user and company">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/model/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/model/Company.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/user/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/user/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/user/repository/CreateUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/user/repository/CreateUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/UserCompany.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/UserCompanyId.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/SetupDataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/SetupDataLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/UserCompanyRepository.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -509,22 +506,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/model/Company.java</url>
-          <line>46</line>
+          <line>44</line>
           <option name="timeStamp" value="358" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/model/Company.java</url>
-          <line>44</line>
+          <line>42</line>
           <option name="timeStamp" value="359" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/model/Company.java</url>
-          <line>42</line>
+          <line>40</line>
           <option name="timeStamp" value="360" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/model/Company.java</url>
-          <line>40</line>
+          <line>38</line>
           <option name="timeStamp" value="361" />
         </line-breakpoint>
       </breakpoints>

@@ -2,17 +2,13 @@ package oliin.apps.workplacer.domain.feature.company.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import oliin.apps.workplacer.domain.feature.user.model.User;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
 @Entity
 @Table(name = "companies")
 @Builder
@@ -23,12 +19,12 @@ public class Company {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     @Column(name = "company_id")
+    @Getter
     private String id;
     @Column(name = "name")
     private String name;
     @Column(name = "active")
     private boolean isActive;
-    @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinTable(
             name = "user_companies",
