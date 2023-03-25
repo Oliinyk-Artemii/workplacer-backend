@@ -12,8 +12,8 @@ import oliin.apps.workplacer.domain.model.user.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import java.util.*;
-import java.util.function.Supplier;
+import java.util.HashSet;
+import java.util.Set;
 
 @Slf4j
 @Component
@@ -31,8 +31,7 @@ public class CreateUserRepository {
         }
 
 
-        final Optional<List<Company>> companiesOptional = companyRepository.findCompaniesByIdIn(request.getCompanyIds().stream().toList());
-        final List<Company> companies = companiesOptional.orElseGet((Supplier<? extends List<Company>>) new ArrayList<>());
+        final Set<Company> companies = companyRepository.findCompaniesByIdIn(request.getCompanyIds()).orElseGet(HashSet::new);
         final Set<Office> offices = officeRepository.findOfficesByIdIn(request.getOfficeIds()).orElseGet(HashSet::new);
 
         var user = User.builder()

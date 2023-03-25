@@ -9,5 +9,5 @@ import java.util.Set;
 
 public interface CompanyRepository extends JpaRepository<Company, Integer> {
     Optional<Company> findById(String email);
-    Optional<List<Company>> findCompaniesByIdIn(List<String> ids);
+    Optional<Set<Company>> findCompaniesByIdIn(Set<String> ids);
 }
