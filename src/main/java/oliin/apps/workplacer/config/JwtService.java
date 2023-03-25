@@ -5,7 +5,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import oliin.apps.workplacer.domain.model.User;
+import oliin.apps.workplacer.domain.feature.user.model.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -26,17 +26,6 @@ public class JwtService {
     }
 
 
-    // TODO Implement it
-//    public UserModel extractUserModel(String token) {
-//        LinkedHashMap json = extractClaim(token, (Claims claims) -> claims.get("user_model", LinkedHashMap.class));
-//        ObjectMapper objectMapper = new ObjectMapper();
-
-//        UserModel premierDriverInfoDTO = objectMapper.convertValue(json, UserModel.class);
-
-//        Map<String, String> map = objectMapper.convertValue(json, Map.class);
-//        return premierDriverInfoDTO;
-//    }
-
     public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = extractAllClaims(token);
         return claimsResolver.apply(claims);
@@ -51,7 +40,6 @@ public class JwtService {
                 .builder()
                 .setClaims(extraClaims)
                 .setSubject(user.getEmail())
-//                .claim("user_model", userModel) // TODO Question to mentor, why it does not work after roles implementation
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * TOKEN_DURATION))
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
