@@ -55,13 +55,11 @@ public class SetupDataLoader implements
         employee.setPassword(passwordEncoder.encode("test"));
         employee.setEmail("employee");
         employee.setRoles(Set.of(AuthorityType.EMPLOYEE));
-        officeManger.setCompanies(new HashSet<>());
+        employee.setCompanies(new HashSet<>());
 
         company.addUser(officeManger);
         company.addUser(employee);
 
-        userRepository.save(officeManger);
-        userRepository.save(employee);
         companyRepository.save(company);
 
         alreadySetup = true;
