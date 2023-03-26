@@ -9,6 +9,6 @@ import java.util.Set;
 public interface OfficeRepository extends JpaRepository<Office, Integer> {
     Optional<Office> findById(String email);
 
-    Optional<Set<Office>> findOfficesByIdIn(Set<String> ids);
+    Set<Office> findOfficesByIdIn(Set<String> ids);
 }
 

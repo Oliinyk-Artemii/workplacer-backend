@@ -24,7 +24,7 @@ public class Office {
     private String name;
     @Column(name = "active")
     private boolean isActive;
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(
             name = "user_offices",
             joinColumns = {@JoinColumn(name = "user_id")},

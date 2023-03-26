@@ -30,23 +30,21 @@ public class CreateUserRepository {
             throw new UserExistsException("User already exists");
         }
 
-
-        final Set<Company> companies = companyRepository.findCompaniesByIdIn(request.getCompanyIds()).orElseGet(HashSet::new);
-        final Set<Office> offices = officeRepository.findOfficesByIdIn(request.getOfficeIds()).orElseGet(HashSet::new);
+        final Set<Company> companies = companyRepository.findCompaniesByIdIn(request.getCompanyIds());
+        final Set<Office> offices = officeRepository.findOfficesByIdIn(request.getOfficeIds());
 
         var user = User.builder()
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
+                .companies(new HashSet<>())
+                .offices(new HashSet<>())
                 .roles(request.getAuthorities())
                 .build();
 
         companies.forEach(company -> company.addUser(user));
         offices.forEach(office -> office.addUser(user));
-
-        companyRepository.saveAll(companies);
-        officeRepository.saveAll(offices);
 
         userRepository.save(user);
         log.info("Created the user {}", request.getEmail());

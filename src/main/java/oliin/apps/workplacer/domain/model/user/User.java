@@ -39,7 +39,8 @@ public class User implements Serializable {
     @Column(name = "offices", nullable = false)
     private Set<Office> offices = new HashSet<>();
 
-    @ElementCollection(targetClass = AuthorityType.class)
+    @ElementCollection(targetClass = AuthorityType.class, fetch = FetchType.EAGER)
+    // TODO question: how to remove EAGER and not close session? It's needed in JwtAuthenticationFilter
     @JoinTable(name = "user_authorities", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "authority", nullable = false)
     private Set<AuthorityType> roles;
