@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f25d1d50-56c2-429e-9fc0-932ed906c8f7" name="Changes" comment="Change list to set in findCompaniesByIdIn method">
-      <change afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/CompanyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/company/CompanyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/company/mapper/CompanyResponseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="f25d1d50-56c2-429e-9fc0-932ed906c8f7" name="Changes" comment="Implement GET /company">
+      <change afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/office/OfficeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/office/OfficeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/office/mapper/OfficeResponseMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/CreateCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/CreateCompanyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/office/CreateOffice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/office/CreateOfficeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/company/CreateCompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/company/CreateCompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/office/CreateOfficeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/office/CreateOfficeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/Office.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/Office.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -412,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679756116011</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Implement GET /company">
+      <created>1680431042783</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1680431042783</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +430,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit" />
     <MESSAGE value="[AUTH] Implement authorization base" />
     <MESSAGE value="[USER-CRUD] Implement user post endpoint" />
     <MESSAGE value="[USER-CRUD] Implement user get endpoint" />
@@ -455,7 +454,8 @@
     <MESSAGE value="Fix company ids field in login response" />
     <MESSAGE value="Try to implement create office endpoint" />
     <MESSAGE value="Change list to set in findCompaniesByIdIn method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change list to set in findCompaniesByIdIn method" />
+    <MESSAGE value="Implement GET /company" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement GET /company" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -482,12 +482,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/CompanyService.java</url>
-          <line>23</line>
+          <line>18</line>
           <option name="timeStamp" value="476" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/CompanyService.java</url>
-          <line>24</line>
+          <line>19</line>
           <option name="timeStamp" value="477" />
         </line-breakpoint>
       </breakpoints>

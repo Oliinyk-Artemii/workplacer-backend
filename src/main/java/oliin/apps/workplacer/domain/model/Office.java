@@ -23,6 +23,7 @@ public class Office {
     @Getter
     private String name;
     @Column(name = "active")
+    @Getter
     private boolean isActive;
     @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(
@@ -38,6 +39,7 @@ public class Office {
             joinColumns = {@JoinColumn(name = "office_id")},
             inverseJoinColumns = {@JoinColumn(name = "company_id")}
     )
+    @Getter
     private Company company;
 
     public void addUser(User user) {
