@@ -21,8 +21,7 @@ public class CreateOfficeService {
     public String doCreateOffice(String officeName, String email) {
         Optional<User> userOptional = userRepository.findByEmail(email);
         return userOptional.map(user -> {
-            final Set<String> existingOfficeNames = user.getOffices().stream().map(Office::getName).collect(Collectors.toSet());
-            final Office office = createOfficeRepository.createOffice(officeName, existingOfficeNames);
+            final Office office = createOfficeRepository.createOffice(officeName, user);
             return office.getId();
         }).orElseThrow(UserMissingException::new);
     }
