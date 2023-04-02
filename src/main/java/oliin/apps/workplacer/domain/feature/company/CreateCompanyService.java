@@ -9,12 +9,10 @@ import oliin.apps.workplacer.domain.model.user.User;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class CreateCompany {
+public class CreateCompanyService {
     private final CreateCompanyRepository createCompanyRepository;
     private final UserRepository userRepository;
 

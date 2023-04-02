@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class CreateOffice {
+public class CreateOfficeService {
     private final CreateOfficeRepository createOfficeRepository;
     private final UserRepository userRepository;
 

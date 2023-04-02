@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import oliin.apps.workplacer.config.JwtAuthenticationFilter;
 import oliin.apps.workplacer.config.JwtService;
-import oliin.apps.workplacer.domain.feature.office.CreateOffice;
+import oliin.apps.workplacer.domain.feature.office.CreateOfficeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class CreateOfficeController {
 
-    private final CreateOffice createOffice;
+    private final CreateOfficeService createOfficeService;
     private final JwtService jwtService;
 
     @PostMapping
@@ -26,7 +26,7 @@ public class CreateOfficeController {
         String email = jwtService.extractUsername(token.substring(JwtAuthenticationFilter.BEARER.length()));
         log.debug("Create office with name - {}, user - {}", request.name(), email);
 
-        String officeId = createOffice.doCreateOffice(request.name(), email);
+        String officeId = createOfficeService.doCreateOffice(request.name(), email);
         return ResponseEntity.status(HttpStatus.CREATED).body(new CreateOfficeResponse(officeId));
     }
 

@@ -29,5 +29,19 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="@awseb-e-pauzg8e2p3-stack-awsebrdsdatabase-9dxav22nkap3.c1euqgo2svnd.eu-west-3.rds.amazonaws.com" uuid="2c1d541a-6b2b-4b10-b33c-45577a624218">
+      <database-info product="MySQL" version="8.0.32" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)" dbms="MYSQL" exact-version="8.0.32" exact-driver-version="8.0">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema" qname="@" />
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
   </component>
 </project>

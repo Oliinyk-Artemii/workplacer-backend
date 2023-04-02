@@ -24,6 +24,7 @@ public class Company {
     @Getter
     private String name;
     @Column(name = "active")
+    @Getter
     private boolean isActive;
     @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(
