@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f25d1d50-56c2-429e-9fc0-932ed906c8f7" name="Changes" comment="Implement GET /office">
+    <list default="true" id="f25d1d50-56c2-429e-9fc0-932ed906c8f7" name="Changes" comment="Fix office creating">
+      <change afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/exception/CompanyMissingException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/repository/CompanyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/repository/CompanyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/office/CreateOfficeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/office/CreateOfficeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/office/repository/CreateOfficeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/office/repository/CreateOfficeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/office/CreateOfficeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/office/CreateOfficeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +23,8 @@
       <list>
         <option value="Enum" />
         <option value="Record" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -417,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680432473610</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Fix office creating">
+      <created>1680438148831</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1680438148831</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +446,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[USER-CRUD] Implement user post endpoint" />
     <MESSAGE value="[USER-CRUD] Implement user get endpoint" />
     <MESSAGE value="[USER-CRUD] Change authenticate to login endpoint" />
     <MESSAGE value="[TECH] Change package name" />
@@ -460,7 +470,8 @@
     <MESSAGE value="Change list to set in findCompaniesByIdIn method" />
     <MESSAGE value="Implement GET /company" />
     <MESSAGE value="Implement GET /office" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement GET /office" />
+    <MESSAGE value="Fix office creating" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix office creating" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
