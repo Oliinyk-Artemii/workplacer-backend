@@ -1,8 +1,8 @@
 package oliin.apps.workplacer.domain.feature.user;
 
 import lombok.AllArgsConstructor;
-import oliin.apps.workplacer.domain.feature.user.model.User;
-import oliin.apps.workplacer.domain.feature.user.model.UserDetailsImpl;
+import oliin.apps.workplacer.domain.model.user.User;
+import oliin.apps.workplacer.domain.model.user.UserDetailsImpl;
 import oliin.apps.workplacer.domain.feature.user.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

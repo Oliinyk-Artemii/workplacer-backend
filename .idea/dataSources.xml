@@ -15,5 +15,12 @@
       <jdbc-url>jdbc:mysql://awseb-e-jrwjpwa99e-stack-awsebrdsdatabase-ai8ctbmbx5ng.ca6gxrdrgtz2.eu-central-1.rds.amazonaws.com:3306</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="@awseb-e-pauzg8e2p3-stack-awsebrdsdatabase-9dxav22nkap3.c1euqgo2svnd.eu-west-3.rds.amazonaws.com" uuid="2c1d541a-6b2b-4b10-b33c-45577a624218">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://awseb-e-pauzg8e2p3-stack-awsebrdsdatabase-9dxav22nkap3.c1euqgo2svnd.eu-west-3.rds.amazonaws.com:3306</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

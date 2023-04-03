@@ -1,6 +1,6 @@
 package oliin.apps.workplacer.rest.feature.user.mapper;
 
-import oliin.apps.workplacer.domain.feature.user.model.CreateUserRequest;
+import oliin.apps.workplacer.domain.model.user.CreateUserRequest;
 import oliin.apps.workplacer.rest.feature.user.CreateUserController;
 import oliin.apps.workplacer.rest.feature.user.RegisterController;
 import oliin.apps.workplacer.rest.feature.user.model.AuthorityType;

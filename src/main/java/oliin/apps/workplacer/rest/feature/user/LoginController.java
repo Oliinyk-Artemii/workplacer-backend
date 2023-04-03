@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import oliin.apps.workplacer.domain.feature.user.SignInService;
-import oliin.apps.workplacer.domain.feature.user.model.User;
+import oliin.apps.workplacer.domain.model.user.User;
 import oliin.apps.workplacer.rest.feature.user.mapper.UserResponseMapper;
 import oliin.apps.workplacer.rest.feature.user.mapper.UserSessionMapper;
 import oliin.apps.workplacer.rest.feature.user.model.UserResponse;

@@ -1,4 +1,4 @@
-package oliin.apps.workplacer.domain.feature.user.model;
+package oliin.apps.workplacer.domain.model.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
