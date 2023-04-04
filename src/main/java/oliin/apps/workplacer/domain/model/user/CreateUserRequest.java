@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import oliin.apps.workplacer.rest.feature.user.model.AuthorityType;
+import oliin.apps.workplacer.feature.user.domain.model.AuthorityType;
 
 import java.util.Set;
 

@@ -1,13 +1,10 @@
 package oliin.apps.workplacer.domain.repository;
 
 import lombok.RequiredArgsConstructor;
-import oliin.apps.workplacer.domain.feature.office.repository.OfficeRepository;
 import oliin.apps.workplacer.domain.model.Company;
-import oliin.apps.workplacer.domain.feature.company.repository.CompanyRepository;
 import oliin.apps.workplacer.domain.model.Office;
 import oliin.apps.workplacer.domain.model.user.User;
-import oliin.apps.workplacer.domain.feature.user.repository.UserRepository;
-import oliin.apps.workplacer.rest.feature.user.model.AuthorityType;
+import oliin.apps.workplacer.feature.user.domain.model.AuthorityType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;

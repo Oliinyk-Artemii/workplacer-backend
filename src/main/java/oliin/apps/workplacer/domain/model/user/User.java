@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import oliin.apps.workplacer.domain.model.Company;
 import oliin.apps.workplacer.domain.model.Office;
-import oliin.apps.workplacer.rest.feature.user.model.AuthorityType;
+import oliin.apps.workplacer.feature.user.domain.model.AuthorityType;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.io.Serializable;

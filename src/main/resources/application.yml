@@ -1,13 +1,12 @@
 server:
-  port: 5000
+  port: 8080
 
 spring:
   datasource:
-    url: jdbc:mysql://awseb-e-pauzg8e2p3-stack-awsebrdsdatabase-9dxav22nkap3.c1euqgo2svnd.eu-west-3.rds.amazonaws.com/ebdb
+    url: jdbc:mysql://localhost:3306/workplacer
     username: root
     password: asdf6541!
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   jpa:
     hibernate:
       ddl-auto: create-drop

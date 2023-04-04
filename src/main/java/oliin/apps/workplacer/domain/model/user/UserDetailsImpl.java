@@ -1,7 +1,7 @@
 package oliin.apps.workplacer.domain.model.user;
 
 import lombok.RequiredArgsConstructor;
-import oliin.apps.workplacer.rest.feature.user.model.AuthorityType;
+import oliin.apps.workplacer.feature.user.domain.model.AuthorityType;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

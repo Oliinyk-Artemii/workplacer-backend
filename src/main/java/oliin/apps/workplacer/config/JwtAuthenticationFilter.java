@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import oliin.apps.workplacer.domain.exception.UserMissingException;
-import oliin.apps.workplacer.domain.feature.user.repository.UserRepository;
+import oliin.apps.workplacer.domain.repository.UserRepository;
 import oliin.apps.workplacer.domain.model.user.User;
 import oliin.apps.workplacer.domain.model.user.UserDetailsImpl;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
