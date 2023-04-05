@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f25d1d50-56c2-429e-9fc0-932ed906c8f7" name="Changes" comment="Refactor project">
-      <change afterPath="$PROJECT_DIR$/src/test/java/oliin/apps/workplacer/feature/user/domain/SignInServiceTest.java" afterDir="false" />
+    <list default="true" id="f25d1d50-56c2-429e-9fc0-932ed906c8f7" name="Changes" comment="Add SignInServiceTest.java">
+      <change afterPath="$PROJECT_DIR$/src/test/java/oliin/apps/workplacer/domain/repository/CreateUserRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/oliin/apps/workplacer/feature/user/domain/RegisterServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/domain/SignInService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/domain/SignInService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/CreateUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/CreateUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/domain/SignInService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/domain/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/domain/SignUpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/domain/RegisterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/rest/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/rest/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/rest/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/rest/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/oliin/apps/workplacer/feature/user/domain/SignInServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/oliin/apps/workplacer/feature/user/domain/LoginServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,18 +132,50 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SignInTest.generateUserAccessToken">
-    <configuration name="SignInTest.doSignIn (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CreateRepositoryTest.doSignUp">
+    <configuration name="CreateRepositoryTest.doSignUp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="workplacer" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="oliin.apps.workplacer.feature.user.domain.*" />
+          <option name="PATTERN" value="oliin.apps.workplacer.domain.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="oliin.apps.workplacer.domain.repository" />
+      <option name="MAIN_CLASS_NAME" value="oliin.apps.workplacer.domain.repository.CreateRepositoryTest" />
+      <option name="METHOD_NAME" value="doSignUp" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginServiceTest.doSignIn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="workplacer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="oliin.apps.workplacer.feature.user.domain.RegisterService" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="oliin.apps.workplacer.feature.user.domain" />
-      <option name="MAIN_CLASS_NAME" value="oliin.apps.workplacer.feature.user.domain.SignInTest" />
+      <option name="MAIN_CLASS_NAME" value="oliin.apps.workplacer.feature.user.domain.LoginServiceTest" />
       <option name="METHOD_NAME" value="doSignIn" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginServiceTest.generateUserAccessToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="workplacer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="oliin.apps.workplacer.feature.user.domain.RegisterService" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="oliin.apps.workplacer.feature.user.domain" />
+      <option name="MAIN_CLASS_NAME" value="oliin.apps.workplacer.feature.user.domain.LoginServiceTest" />
+      <option name="METHOD_NAME" value="generateUserAccessToken" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,22 +192,6 @@
       <option name="PACKAGE_NAME" value="com.azercell.cl.auth.server.domain" />
       <option name="MAIN_CLASS_NAME" value="com.azercell.cl.auth.server.domain.SignInTest" />
       <option name="METHOD_NAME" value="doSignIn" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SignInTest.generateUserAccessToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="workplacer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="oliin.apps.workplacer.feature.user.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="oliin.apps.workplacer.feature.user.domain" />
-      <option name="MAIN_CLASS_NAME" value="oliin.apps.workplacer.feature.user.domain.SignInTest" />
-      <option name="METHOD_NAME" value="generateUserAccessToken" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -225,9 +247,10 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.CreateRepositoryTest.doSignUp" />
+      <item itemvalue="JUnit.LoginServiceTest.doSignIn" />
+      <item itemvalue="JUnit.LoginServiceTest.generateUserAccessToken" />
       <item itemvalue="JUnit.SignInTest.doSignIn" />
-      <item itemvalue="JUnit.SignInTest.doSignIn (1)" />
-      <item itemvalue="JUnit.SignInTest.generateUserAccessToken" />
       <item itemvalue="Maven.workplacer [install]" />
       <item itemvalue="Spring Boot.WorkplacerApplication (2)" />
       <item itemvalue="Spring Boot.prod" />
@@ -235,8 +258,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SignInTest.generateUserAccessToken" />
-        <item itemvalue="JUnit.SignInTest.doSignIn (1)" />
+        <item itemvalue="JUnit.CreateRepositoryTest.doSignUp" />
+        <item itemvalue="JUnit.LoginServiceTest.generateUserAccessToken" />
+        <item itemvalue="JUnit.LoginServiceTest.doSignIn" />
         <item itemvalue="JUnit.SignInTest.doSignIn" />
       </list>
     </recent_temporary>
@@ -279,7 +303,7 @@
       <workItem from="1679484222451" duration="732000" />
       <workItem from="1679680690215" duration="3141000" />
       <workItem from="1679750623615" duration="16873000" />
-      <workItem from="1680520574471" duration="10895000" />
+      <workItem from="1680520574471" duration="13641000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1674502336358</created>
@@ -498,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680608940555</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Add SignInServiceTest.java">
+      <created>1680716115230</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1680716115230</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +547,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[USER-CRUD] Change authenticate to login endpoint" />
     <MESSAGE value="[TECH] Change package name" />
     <MESSAGE value="[TECH] Change project structure, implement SignUp.java" />
     <MESSAGE value="[TECH] Add RegisterControllerAdvice.java" />
@@ -541,7 +571,8 @@
     <MESSAGE value="Fix office creating" />
     <MESSAGE value="Add company to office during creating" />
     <MESSAGE value="Refactor project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor project" />
+    <MESSAGE value="Add SignInServiceTest.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add SignInServiceTest.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

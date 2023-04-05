@@ -44,7 +44,8 @@ public class CreateUserRepository {
         companies.forEach(company -> company.addUser(user));
         offices.forEach(office -> office.addUser(user));
 
-        userRepository.save(user);
+        final String id = userRepository.save(user).getId();
+        user.setId(id);
         log.info("Created the user {}", request.getEmail());
         return user;
     }

@@ -5,7 +5,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import oliin.apps.workplacer.feature.user.domain.SignInService;
+import oliin.apps.workplacer.feature.user.domain.LoginService;
 import oliin.apps.workplacer.domain.model.user.User;
 import oliin.apps.workplacer.feature.user.rest.mapper.UserSessionMapper;
 import oliin.apps.workplacer.feature.user.domain.model.UserResponse;
@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class LoginController {
 
-    private final SignInService signInService;
+    private final LoginService loginService;
     private final UserSessionMapper userSessionMapper;
     private final UserResponseMapper userResponseMapper;
 //    private final DeviceTokenService deviceTokenService;
@@ -32,8 +32,8 @@ public class LoginController {
     public ResponseEntity<LoginResponse> login(@RequestBody @Valid LoginRequest request) {
         log.debug("Login user with email - {}", request.email());
 
-        User user = signInService.doSignIn(userSessionMapper.toUserCredentials(request));
-        String accessToken = signInService.generateUserAccessToken(user);
+        User user = loginService.doSignIn(userSessionMapper.toUserCredentials(request));
+        String accessToken = loginService.generateUserAccessToken(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(new LoginResponse(accessToken, userResponseMapper.toUserResponse(user)));
     }
 

@@ -18,7 +18,7 @@ import java.util.Optional;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class SignInService {
+public class LoginService {
 
 //    @Qualifier("DEVICE_INFO")
 //    private final Supplier<DeviceInfo> deviceInfoSupplier;

@@ -19,10 +19,10 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class SignInTest {
+class LoginServiceTest {
 
     @InjectMocks
-    private SignInService signInService;
+    private LoginService loginService;
     @Mock
     private JwtService jwtService;
     @Mock
@@ -40,7 +40,7 @@ class SignInTest {
 
         when(userRepository.findByEmail("email")).thenReturn(Optional.of(fakeUser));
 
-        User user = signInService.doSignIn(new UserCredentials("email", "password"));
+        User user = loginService.doSignIn(new UserCredentials("email", "password"));
 
         assertEquals(fakeUser, user);
         verify(authenticationManager).authenticate(new UsernamePasswordAuthenticationToken(
@@ -59,7 +59,7 @@ class SignInTest {
 
         when(jwtService.generateToken(fakeUser)).thenReturn("access-token");
 
-        String accessToken = signInService.generateUserAccessToken(fakeUser);
+        String accessToken = loginService.generateUserAccessToken(fakeUser);
 
         assertEquals(accessToken, "access-token");
     }
