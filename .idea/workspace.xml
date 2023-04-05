@@ -4,50 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f25d1d50-56c2-429e-9fc0-932ed906c8f7" name="Changes" comment="Add company to office during creating">
+    <list default="true" id="f25d1d50-56c2-429e-9fc0-932ed906c8f7" name="Changes" comment="Refactor project">
+      <change afterPath="$PROJECT_DIR$/src/test/java/oliin/apps/workplacer/feature/user/domain/SignInServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/ApplicationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/config/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/company/domain/CompanyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/CreateCompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/company/domain/CreateCompanyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/repository/CompanyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/CompanyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/company/repository/CreateCompanyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/CreateCompanyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/office/CreateOfficeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/office/domain/CreateOfficeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/office/OfficeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/office/domain/OfficeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/office/repository/CreateOfficeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/CreateOfficeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/office/repository/OfficeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/OfficeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/user/CreateUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/domain/CreateUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/user/SignInService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/domain/SignInService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/user/SignUpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/domain/SignUpService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/user/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/domain/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/domain/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/user/repository/CreateUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/CreateUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/feature/user/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/user/CreateUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/user/CreateUserRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/user/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/model/user/UserDetailsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/SetupDataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/domain/repository/SetupDataLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/company/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/company/rest/CompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/company/CreateCompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/company/rest/CreateCompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/company/mapper/CompanyResponseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/company/rest/mapper/CompanyResponseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/office/CreateOfficeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/office/rest/CreateOfficeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/office/OfficeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/office/rest/OfficeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/office/mapper/OfficeResponseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/office/rest/mapper/OfficeResponseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/user/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/rest/CreateUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/user/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/rest/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/user/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/rest/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/rest/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/user/advice/LoginControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/rest/advice/LoginControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/user/advice/RegisterControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/rest/advice/RegisterControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/user/mapper/CreateUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/rest/mapper/CreateUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/user/mapper/UserAuthenticationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/rest/mapper/UserAuthenticationMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/user/mapper/UserInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/rest/mapper/UserInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/user/mapper/UserResponseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/rest/mapper/UserResponseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/user/mapper/UserRoleDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/rest/mapper/UserRoleDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/user/mapper/UserSessionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/rest/mapper/UserSessionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/user/model/AuthorityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/domain/model/AuthorityType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/rest/feature/user/model/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/domain/model/UserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/domain/SignInService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oliin/apps/workplacer/feature/user/domain/SignInService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/office" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -152,6 +112,7 @@
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="oliin.apps.workplacer.feature.user.domain" />
       <recent name="oliin.apps.workplacer.auth.rest" />
       <recent name="oliin.apps.workplacer.auth.rest.mapper" />
       <recent name="oliin.apps.workplacer.sabre.rest.mapper" />
@@ -165,7 +126,55 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.dev">
+  <component name="RunManager" selected="JUnit.SignInTest.generateUserAccessToken">
+    <configuration name="SignInTest.doSignIn (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="workplacer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="oliin.apps.workplacer.feature.user.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="oliin.apps.workplacer.feature.user.domain" />
+      <option name="MAIN_CLASS_NAME" value="oliin.apps.workplacer.feature.user.domain.SignInTest" />
+      <option name="METHOD_NAME" value="doSignIn" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignInTest.doSignIn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="workplacer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.azercell.cl.auth.server.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.azercell.cl.auth.server.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.azercell.cl.auth.server.domain.SignInTest" />
+      <option name="METHOD_NAME" value="doSignIn" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignInTest.generateUserAccessToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="workplacer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="oliin.apps.workplacer.feature.user.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="oliin.apps.workplacer.feature.user.domain" />
+      <option name="MAIN_CLASS_NAME" value="oliin.apps.workplacer.feature.user.domain.SignInTest" />
+      <option name="METHOD_NAME" value="generateUserAccessToken" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="workplacer [install]" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -216,11 +225,21 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.SignInTest.doSignIn" />
+      <item itemvalue="JUnit.SignInTest.doSignIn (1)" />
+      <item itemvalue="JUnit.SignInTest.generateUserAccessToken" />
       <item itemvalue="Maven.workplacer [install]" />
       <item itemvalue="Spring Boot.WorkplacerApplication (2)" />
       <item itemvalue="Spring Boot.prod" />
       <item itemvalue="Spring Boot.dev" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SignInTest.generateUserAccessToken" />
+        <item itemvalue="JUnit.SignInTest.doSignIn (1)" />
+        <item itemvalue="JUnit.SignInTest.doSignIn" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SpringBeansView">
@@ -260,7 +279,7 @@
       <workItem from="1679484222451" duration="732000" />
       <workItem from="1679680690215" duration="3141000" />
       <workItem from="1679750623615" duration="16873000" />
-      <workItem from="1680520574471" duration="5664000" />
+      <workItem from="1680520574471" duration="10895000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1674502336358</created>
@@ -472,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680520682395</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Refactor project">
+      <created>1680608940555</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1680608940555</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +527,6 @@
     <MESSAGE value="Remove redis" />
     <MESSAGE value="Update application-prod.yml" />
     <MESSAGE value="Update login endpoint, fix bugs" />
-    <MESSAGE value="Refactor project" />
     <MESSAGE value="Implement user roles" />
     <MESSAGE value="Revamp UserDetails and related classes" />
     <MESSAGE value="Update create user" />
@@ -515,7 +540,8 @@
     <MESSAGE value="Implement GET /office" />
     <MESSAGE value="Fix office creating" />
     <MESSAGE value="Add company to office during creating" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add company to office during creating" />
+    <MESSAGE value="Refactor project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
