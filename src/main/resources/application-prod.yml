@@ -3,8 +3,8 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://awseb-e-pauzg8e2p3-stack-awsebrdsdatabase-9dxav22nkap3.c1euqgo2svnd.eu-west-3.rds.amazonaws.com/ebdb
-    username: root
+    url: jdbc:mysql://workplacersqlserver.mysql.database.azure.com/db
+    username: Artemii
     password: asdf6541!
     driver-class-name: com.mysql.cj.jdbc.Driver
 
