@@ -14,7 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: azure/login@v1
+        with: ${{ secrets.WORKPLACER_CREDENTIALS }}
 
       - name: Set up Java version
         uses: actions/setup-java@v1
