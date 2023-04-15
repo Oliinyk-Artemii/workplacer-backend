@@ -36,8 +36,8 @@ jobs:
         with:
           java-version: '17'
 
-      - name: Build with Maven
-        run: mvn clean install:install-file "-U" "-DgroupId=oliin.apps" "-DartifactId=workplacer" "-Dpackaging=jar" "-Dfile=workplacer/workplacer.jar" "-DgeneratePom=true"
+      - name: Standard Checkout
+        uses: actions/checkout@v2
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
