@@ -15,7 +15,8 @@ jobs:
 
     steps:
       - uses: azure/login@v1
-        with: ${{ secrets.WORKPLACER_CREDENTIALS }}
+        with:
+          creds: ${{ secrets.WORKPLACER_CREDENTIALS }}
 
       - name: Set up Java version
         uses: actions/setup-java@v1
