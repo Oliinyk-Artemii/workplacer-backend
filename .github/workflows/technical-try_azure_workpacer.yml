@@ -17,9 +17,11 @@ jobs:
       # Install azure-cli
       - uses: elstudio/action-install-azure-cli@v1
       # Now run whatever steps require the `az` command line utility
-      - uses: azure/login@v1
+      - name: Log in with Azure
+        uses: azure/login@v1
         with:
-          creds: ${{ secrets.WORKPLACER_CREDENTIALS }}
+          creds: '${{ secrets.WORKPLACER_CREDENTIALS }}'
+
 
       - name: Set up Java version
         uses: actions/setup-java@v1
