@@ -37,7 +37,7 @@ jobs:
           java-version: '17'
 
       - name: Build with Maven
-        run: mvn install:install-file "-DgroupId=oliin.apps" "-DartifactId=workplacer" "-Dversion=1.0" "-Dpackaging=jar" "-Dfile=/home/runner/work/workplacer-backend/workplacer-backend/0.0.5-SNAPSHOT/workplacer-0.0.5-SNAPSHOT.jar"
+        run: mvn install:install-file "-DgroupId=oliin.apps" "-DartifactId=workplacer" "-Dversion=1.0" "-Dpackaging=jar" "-Dfile=workplacer-1.0-SNAPSHOT.jar"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
