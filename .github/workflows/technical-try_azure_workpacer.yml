@@ -18,7 +18,6 @@ jobs:
       - uses: elstudio/action-install-azure-cli@v1
       # Now run whatever steps require the `az` command line utility
       - uses: azure/webapps-deploy@v2
-      - uses: azure/login@v1
         with:
           creds: ${{ secrets.WORKPLACER_CREDENTIALS }}
 
