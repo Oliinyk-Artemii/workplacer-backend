@@ -37,7 +37,7 @@ jobs:
           java-version: '17'
 
       - name: Build with Maven
-        run: cd .. && mvn clean install
+        run: mvn install:install-file "-DgroupId=workplacer" "-DartifactId=workplacer" "-Dversion=1.0" "-Dpackaging=jar" "-Dfile=workplacer/workplacer.jar"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
