@@ -17,7 +17,7 @@ jobs:
       # Install azure-cli
       - uses: elstudio/action-install-azure-cli@v1
       # Now run whatever steps require the `az` command line utility
-      - uses: azure/login@v1
+      - uses: azure/login@v1.4.3
         with:
           creds: ${{ secrets.WORKPLACER_CREDENTIALS }}
 
