@@ -19,7 +19,7 @@ jobs:
       # Now run whatever steps require the `az` command line utility
       - uses: azure/login@v1.4.3
         with:
-          creds: ${{ secrets.WORKPLACER_CREDENTIALS }}
+          creds: ${{ secrets.WORKPLACER_SECRET }}
 
       - name: Set up Java version
         uses: actions/setup-java@v1
