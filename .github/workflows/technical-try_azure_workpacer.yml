@@ -37,7 +37,7 @@ jobs:
           java-version: '17'
 
       - name: Build with Maven
-        run: mvn clean install:install-file -U "-DgroupId=oliin.apps" "-DartifactId=workplacer" "-Dversion=1.0.0" "-Dpackaging=jar" "-Dfile=/home/runner/work/workplacer-backend/workplacer-backend/target/workplacer-1.0.0-SNAPSHOT.jar" -DgeneratePom=true && ls
+        run: mvn clean install:install-file "-U" "-DgroupId=oliin.apps" "-DartifactId=workplacer" "-Dversion=1.0.0" "-Dpackaging=jar" "-Dfile=/home/runner/work/workplacer-backend/workplacer-backend/target/workplacer-1.0.0-SNAPSHOT.jar" "-DgeneratePom=true"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
