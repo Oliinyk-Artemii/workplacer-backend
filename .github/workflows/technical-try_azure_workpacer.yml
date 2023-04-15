@@ -39,11 +39,12 @@ jobs:
       - name: Standard Checkout
         uses: actions/checkout@v2
 
-      - name: publish test results
-        uses: actions/upload-artifact@v1
+      - name: Upload artifact for deployment job
+        needs: build
+        uses: actions/upload-artifact@v2
         with:
-          name: report
-          path: report.html
+          name: java-app
+          path: '${{ github.workspace }}/target/*.jar'
 
   deploy:
     runs-on: ubuntu-latest
