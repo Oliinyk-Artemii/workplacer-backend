@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
       # Install azure-cli
 #      - uses: elstudio/action-install-azure-cli@v1
       # Now run whatever steps require the `az` command line utility
@@ -36,11 +37,15 @@ jobs:
         with:
           java-version: '17'
 
-      - name: Standard Checkout
-        uses: actions/checkout@v2
+      - name: Cache the Maven packages to speed up build
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
 
-      - name: Build with Maven
-        run: mvn clean install:install-file "-U" "-DgroupId=oliin.apps" "-DartifactId=workplacer" "-Dpackaging=jar" "-Dfile=workplacer/workplacer.jar" "-DgeneratePom=true"
+      - name: Build and test project with Maven
+        run: mvn -B package --file pom.xml
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
