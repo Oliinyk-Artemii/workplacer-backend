@@ -21,7 +21,7 @@ jobs:
 
     steps:
       # Install azure-cli
-      - uses: elstudio/action-install-azure-cli@v1
+#      - uses: elstudio/action-install-azure-cli@v1
       # Now run whatever steps require the `az` command line utility
       - name: 'Az CLI login'
         uses: azure/login@v1
