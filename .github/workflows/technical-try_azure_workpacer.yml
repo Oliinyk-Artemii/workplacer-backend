@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
       - name: Set up Java version
         uses: actions/setup-java@v1
         with:
@@ -43,7 +44,6 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-      - uses: actions/checkout@v2
         # Install azure-cli
         #      - uses: elstudio/action-install-azure-cli@v1
         # Now run whatever steps require the `az` command line utility
