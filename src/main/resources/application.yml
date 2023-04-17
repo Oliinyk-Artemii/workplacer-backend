@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://workplacer-dev.mysql.database.azure.com/db
+    url: jdbc:mysql://workplacersqlserver.mysql.database.azure.com/db
     username: Artemii
     password: asdf6541!
     driver-class-name: com.mysql.cj.jdbc.Driver
