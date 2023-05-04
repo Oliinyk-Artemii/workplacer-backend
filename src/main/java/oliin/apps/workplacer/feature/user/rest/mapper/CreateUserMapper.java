@@ -20,6 +20,7 @@ public interface CreateUserMapper {
 
     @Mapping(source="companyId",target = "companyIds", qualifiedByName = "idToIdsSet")
     @Mapping(source="officeId",target = "officeIds", qualifiedByName = "idToIdsSet")
+    @Mapping(source="authorityType",target = "authorities", qualifiedByName = "idToIdsSet")
     CreateUserRequest toCreateUserRequest(CreateUserController.CreateUserRequest request);
 
     @Named("idToIdsSet")

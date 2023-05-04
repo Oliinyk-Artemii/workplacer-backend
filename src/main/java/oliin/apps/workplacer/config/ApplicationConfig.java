@@ -23,14 +23,6 @@ public class ApplicationConfig {
         return userDetailsService;
     }
 
-
-//    @Bean
-//    public DefaultWebSecurityExpressionHandler webSecurityExpressionHandler() {
-//        DefaultWebSecurityExpressionHandler expressionHandler = new DefaultWebSecurityExpressionHandler();
-//        expressionHandler.setRoleHierarchy(roleHierarchy());
-//        return expressionHandler;
-//    }
-
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();

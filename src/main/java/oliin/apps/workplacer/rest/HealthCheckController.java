@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class HealthCheckController {
     @GetMapping
-    public ResponseEntity<HealthCheckResponse> getOfficeUsers() {
+    public ResponseEntity<HealthCheckResponse> checkHealth() {
         log.debug("Health check triggered");
 
         return ResponseEntity.status(HttpStatus.CREATED).body(new HealthCheckResponse("ok"));
