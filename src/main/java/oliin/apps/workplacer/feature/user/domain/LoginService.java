@@ -8,36 +8,29 @@ import oliin.apps.workplacer.domain.exception.UserMissingException;
 import oliin.apps.workplacer.domain.model.user.User;
 import oliin.apps.workplacer.domain.model.user.UserCredentials;
 import oliin.apps.workplacer.domain.repository.UserRepository;
-import oliin.apps.workplacer.domain.model.DeviceInfo;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-import java.util.function.Supplier;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class SignInService {
+public class LoginService {
 
-    @Qualifier("DEVICE_INFO")
-    private final Supplier<DeviceInfo> deviceInfoSupplier;
+//    @Qualifier("DEVICE_INFO")
+//    private final Supplier<DeviceInfo> deviceInfoSupplier;
     private final JwtService jwtService;
     private final UserRepository userRepository;
     private final AuthenticationManager authenticationManager;
-    private final PasswordEncoder passwordEncoder;
 
     public User doSignIn(UserCredentials userCredentials) {
         final Optional<User> userOptional = userRepository.findByEmail(userCredentials.email());
         return userOptional.map((user) -> {
-            signIn(userCredentials);
+            authenticate(userCredentials);
             return user;
-
-
         }).orElseThrow(UserMissingException::new);
     }
 
@@ -45,7 +38,7 @@ public class SignInService {
         return jwtService.generateToken(user);
     }
 
-    public void signIn(UserCredentials userCredential) {
+    private void authenticate(UserCredentials userCredential) {
         String email = userCredential.email();
         String password = userCredential.password();
         try {

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class SignUpService {
+public class RegisterService {
     private final CreateUserRepository createUserRepository;
     private final JwtService jwtService;
 
