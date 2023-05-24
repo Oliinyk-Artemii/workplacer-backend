@@ -3,7 +3,9 @@ package oliin.apps.workplacer.feature.user.rest.mapper;
 import oliin.apps.workplacer.domain.model.Company;
 import oliin.apps.workplacer.domain.model.Office;
 import oliin.apps.workplacer.domain.model.user.User;
+import oliin.apps.workplacer.domain.model.user.UserProjection;
 import oliin.apps.workplacer.feature.user.domain.model.AuthorityType;
+import oliin.apps.workplacer.feature.user.domain.model.UserProjectionResponse;
 import oliin.apps.workplacer.feature.user.domain.model.UserResponse;
 import org.mapstruct.*;
 
@@ -18,6 +20,9 @@ public interface UserResponseMapper {
     @Mapping(source = "companies", target = "companyIds", qualifiedByName = "companiesToCompanyIds")
     @Mapping(source = "offices", target = "officeIds", qualifiedByName = "officesToOfficeIds")
     UserResponse toUserResponse(User user);
+
+    @Mapping(source = "roles", target = "role", qualifiedByName = "rolesToRole")
+    UserProjectionResponse toUserResponse(UserProjection user);
 
     @Named("rolesToRole")
     public static AuthorityType rolesToRole(Set<AuthorityType> roles) {

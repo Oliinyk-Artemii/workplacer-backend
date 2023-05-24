@@ -5,8 +5,9 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import oliin.apps.workplacer.feature.user.domain.UserService;
-import oliin.apps.workplacer.feature.user.rest.mapper.UserResponseMapper;
+import oliin.apps.workplacer.feature.user.domain.model.UserProjectionResponse;
 import oliin.apps.workplacer.feature.user.domain.model.UserResponse;
+import oliin.apps.workplacer.feature.user.rest.mapper.UserResponseMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -31,13 +32,13 @@ public class UserController {
                                                              @RequestParam(name = "office-id") String officeId) {
         log.debug("Get users of office with id - {}", officeId);
 
-        final List<UserResponse> users = userService.doGetOfficeUsers(officeId).stream().map(userResponseMapper::toUserResponse).toList();
+        final List<UserProjectionResponse> users = userService.doGetOfficeUsers(officeId).stream().map(userResponseMapper::toUserResponse).toList();
         final String randomPassword = userService.generatePassword();
 
         return ResponseEntity.status(HttpStatus.CREATED).body(new OfficeUserResponse(randomPassword, users));
     }
 
     public record OfficeUserResponse(@JsonProperty("default-password") String defaultPassword,
-                                     @JsonProperty("users") List<UserResponse> users) {
+                                     @JsonProperty("users") List<UserProjectionResponse> users) {
     }
 }
