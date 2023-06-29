@@ -13,7 +13,7 @@ Workplacer Backend is a Java-based server-side application that powers the Workp
 
 1. Clone the repository to your local machine:
    ```
-   git clone https://github.com/your-username/workplacer-backend.git
+   git clone https://github.com/arrrtem22/workplacer-backend.git
    ```
 
 2. Navigate to the project directory:
