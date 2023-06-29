@@ -48,8 +48,6 @@ Contributions are welcome! If you would like to contribute to Workplacer Backend
 3. Commit your changes and push the branch to your fork.
 4. Submit a pull request with a detailed description of your changes.
 
-Please adhere to the existing code style and follow the contribution guidelines outlined in the [CONTRIBUTING.md](/CONTRIBUTING.md) file.
-
 ## Contact
 
 If you have any questions or suggestions regarding Workplacer Backend, please contact us at `aoliinyk2022@gmail.com`. We value your feedback and are ready to assist you.
